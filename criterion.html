@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Assessment Criteria – PortfolioHub</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="criteria-body">
+    <nav class="top-nav">
+      <div class="nav-left">
+        <span class="logo">PortfolioHub</span>
+      </div>
+      <div class="nav-right">
+        <a href="index.html">Home</a>
+        <a href="search.html">Search</a>
+        <a href="criterion.html">Criteria</a>
+        <a href="login.html" id="login-link">Login / Register</a>
+        <a href="dashboard.html">Dashboard</a>
+        <button type="button" id="logout-btn">Logout</button>
+      </div>
+    </nav>
+
+    <main class="criteria-page">
+      <!-- HERO -->
+      <header class="criteria-hero">
+        <div class="criteria-hero-badge">Project: PortfolioHub</div>
+        <h1>Assessment Criteria A–D</h1>
+        <p>
+          This page explains how my portfolio website meets each assessment
+          criterion. Use the quick navigation to jump to any section.
+        </p>
+
+        <div class="criteria-hero-grid">
+          <div class="criteria-hero-item">
+            <span class="hero-label">Technology</span>
+            <p>HTML, CSS, JavaScript (modules), Firebase Auth &amp; Firestore</p>
+          </div>
+          <div class="criteria-hero-item">
+            <span class="hero-label">Features</span>
+            <p>Login, register, dashboard, public profile, project search</p>
+          </div>
+          <div class="criteria-hero-item">
+            <span class="hero-label">Focus</span>
+            <p>User portfolios for students to present their work</p>
+          </div>
+        </div>
+      </header>
+
+      <!-- STICKY IN-PAGE NAV -->
+      <aside class="criteria-sidebar">
+        <p class="sidebar-label">Jump to criterion:</p>
+        <a href="#criterion-a" class="sidebar-link sidebar-link--a">A &mdash; Planning</a>
+        <a href="#criterion-b" class="sidebar-link sidebar-link--b">B &mdash; Design</a>
+        <a href="#criterion-c" class="sidebar-link sidebar-link--c">C &mdash; Development</a>
+        <a href="#criterion-d" class="sidebar-link sidebar-link--d">D &mdash; Evaluation</a>
+      </aside>
+
+      <!-- CONTENT SECTIONS -->
+      <section class="criteria-sections">
+
+        <!-- A -->
+        <article id="criterion-a" class="criteria-card criteria-card--a">
+          <header class="criteria-card-header">
+            <div class="criteria-chip criteria-chip--a">A</div>
+            <div>
+              <h2>Criterion A &mdash; Planning / Investigating</h2>
+              <p class="criteria-subtitle">
+                Why this project exists and what problem it solves.
+              </p>
+            </div>
+          </header>
+
+          <div class="criteria-body-grid">
+            <div class="criteria-body-column">
+              <h3>Problem &amp; Goal</h3>
+              <p>
+                Many students have projects in different places (local files,
+                GitHub, Google Drive) and no single place to present them clearly.
+                The goal of this website is to provide one profile page that
+                shows a student’s name, skills and projects in a clean, shareable way.
+              </p>
+
+              <h3>Target audience</h3>
+              <ul>
+                <li>Students who want to organise and present their projects.</li>
+                <li>Teachers who want to see progress and evidence of learning.</li>
+                <li>Potential future schools or clubs who need a quick overview.</li>
+              </ul>
+            </div>
+
+            <div class="criteria-body-column">
+              <h3>Research</h3>
+              <p>
+                Before building the site I looked at portfolio websites and
+                social platforms such as GitHub, Dribbble and LinkedIn. I noticed:
+              </p>
+              <ul>
+                <li>Clear profile section at the top (photo, name, bio).</li>
+                <li>Projects grouped in cards with title, short description and link.</li>
+                <li>Navigation that separates public view from editing tools.</li>
+              </ul>
+
+              <h3>Success criteria</h3>
+              <p>
+                The website is successful if a new user can register, log in,
+                add at least one project and share their profile with another person
+                without needing my help.
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <!-- B -->
+        <article id="criterion-b" class="criteria-card criteria-card--b">
+          <header class="criteria-card-header">
+            <div class="criteria-chip criteria-chip--b">B</div>
+            <div>
+              <h2>Criterion B &mdash; Design / Structure</h2>
+              <p class="criteria-subtitle">
+                How the layout, navigation and user experience were planned.
+              </p>
+            </div>
+          </header>
+
+          <div class="criteria-body-grid">
+            <div class="criteria-body-column">
+              <h3>Information architecture</h3>
+              <ul>
+                <li>
+                  <strong>Public profile page:</strong> shows name, username,
+                  skills, projects and contact info.
+                </li>
+                <li>
+                  <strong>Dashboard:</strong> private area to edit profile and projects.
+                </li>
+                <li>
+                  <strong>Search page:</strong> explore users and projects.
+                </li>
+                <li>
+                  <strong>Login / Register:</strong> access control for each student.
+                </li>
+                <li>
+                  <strong>Criteria page:</strong> explains how the project meets A–D.
+                </li>
+              </ul>
+
+              <h3>Layout decisions</h3>
+              <p>
+                I used a card-based layout with a fixed-width content area so that
+                the website stays readable on laptops and large screens. Sections
+                are grouped with clear headings, spacing and subtle borders.
+              </p>
+            </div>
+
+            <div class="criteria-body-column">
+              <h3>Wireframe / Component thinking</h3>
+              <ul>
+                <li>Profile header (picture + text) as reusable component.</li>
+                <li>Project card style reused on profile and dashboard.</li>
+                <li>Forms in dashboard follow the same label + input pattern.</li>
+              </ul>
+
+              <h3>User flow</h3>
+              <ol>
+                <li>User visits login page and can see criteria or continue as guest.</li>
+                <li>User registers → profile document is created in Firestore.</li>
+                <li>User edits profile / projects in the dashboard.</li>
+                <li>Public profile updates automatically from the same data.</li>
+              </ol>
+            </div>
+          </div>
+        </article>
+
+        <!-- C -->
+        <article id="criterion-c" class="criteria-card criteria-card--c">
+          <header class="criteria-card-header">
+            <div class="criteria-chip criteria-chip--c">C</div>
+            <div>
+              <h2>Criterion C &mdash; Development / Implementation</h2>
+              <p class="criteria-subtitle">
+                Technologies, code structure and advanced features.
+              </p>
+            </div>
+          </header>
+
+          <div class="criteria-body-grid">
+            <div class="criteria-body-column">
+              <h3>Front-end implementation</h3>
+              <ul>
+                <li>Semantic HTML pages: profile, dashboard, login, search, criteria.</li>
+                <li>Shared navigation bar styled via a global CSS file.</li>
+                <li>Responsive cards and grids using modern CSS (flexbox and grid).</li>
+                <li>Smooth scrolling and hover animations for better UX.</li>
+              </ul>
+
+              <h3>JavaScript structure</h3>
+              <ul>
+                <li>Single <code>script.js</code> loaded as an ES module.</li>
+                <li>Separate functions for rendering profile, projects, skills and contact.</li>
+                <li>Page initialisation based on CSS classes (profile-page, dashboard-page, etc.).</li>
+              </ul>
+            </div>
+
+            <div class="criteria-body-column">
+              <h3>Firebase integration</h3>
+              <ul>
+                <li>Firebase Authentication with email &amp; password.</li>
+                <li>Cloud Firestore collection <code>users</code> (document per user).</li>
+                <li>Profile + projects saved and loaded from the cloud.</li>
+                <li>Security rules so users can only edit their own document.</li>
+              </ul>
+
+              <h3>Search &amp; guest access</h3>
+              <ul>
+                <li>Search page loads all user documents from Firestore.</li>
+                <li>Users can be searched by name, username or project text.</li>
+                <li>“Continue without registration” allows exploring projects as a guest.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <!-- D -->
+        <article id="criterion-d" class="criteria-card criteria-card--d">
+          <header class="criteria-card-header">
+            <div class="criteria-chip criteria-chip--d">D</div>
+            <div>
+              <h2>Criterion D &mdash; Evaluation / Reflection</h2>
+              <p class="criteria-subtitle">
+                What works well, what could be improved, and what I learned.
+              </p>
+            </div>
+          </header>
+
+          <div class="criteria-body-grid">
+            <div class="criteria-body-column">
+              <h3>Strengths</h3>
+              <ul>
+                <li>Real authentication and database instead of only local storage.</li>
+                <li>Clear separation between public profile and editing dashboard.</li>
+                <li>Re-usable components (cards, forms, sections) and clean design.</li>
+                <li>Search function that works across all users and projects.</li>
+              </ul>
+
+              <h3>Limitations</h3>
+              <ul>
+                <li>No file upload yet for real profile pictures.</li>
+                <li>Search is not paginated, which could be slow with many users.</li>
+                <li>Design is not fully optimised for phones yet.</li>
+              </ul>
+            </div>
+
+            <div class="criteria-body-column">
+              <h3>Future improvements</h3>
+              <ul>
+                <li>Add Google sign-in and optional two-factor authentication.</li>
+                <li>Allow users to choose themes or colour schemes.</li>
+                <li>Add tagging and filtering for projects (e.g. “JavaScript”, “Design”).</li>
+              </ul>
+
+              <h3>Skills developed</h3>
+              <ul>
+                <li>Connecting a front-end website to Firebase Authentication.</li>
+                <li>Storing and reading structured data from Cloud Firestore.</li>
+                <li>Working with a modular JavaScript file that controls many pages.</li>
+                <li>Planning a project using criteria A–D and documenting decisions.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <script type="module" src="script.js"></script>
+  </body>
+</html>
