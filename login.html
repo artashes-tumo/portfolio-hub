@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login / Register – PortfolioHub</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="auth-body">
+  <nav class="top-nav">
+    <div class="nav-left">
+      <span class="logo">PortfolioHub</span>
+    </div>
+    <div class="nav-right">
+      <a href="index.html">Home</a>
+      <a href="search.html">Search</a>
+      <a href="login.html" id="login-link">Login / Register</a>
+      <a href="dashboard.html">Dashboard</a>
+      <button type="button" id="logout-btn">Logout</button>
+    </div>
+  </nav>
+
+  <main class="auth-container">
+    <section class="auth-card">
+      <h1>Login</h1>
+      <p class="auth-subtitle">
+        Sign in with your email and password.
+      </p>
+
+      <form id="login-form" class="dashboard-form">
+        <label>
+          Email
+          <input type="email" id="login-email" required placeholder="john@example.com">
+        </label>
+
+        <label>
+          Password
+          <input type="password" id="login-password" required placeholder="••••••••">
+        </label>
+
+        <button type="submit" class="primary-btn">Login</button>
+        <p id="login-message" class="save-message" aria-live="polite"></p>
+      </form>
+
+      <hr style="border:none;border-top:1px solid #374151;margin:1.5rem 0;">
+
+      <h1>Register</h1>
+      <p class="auth-subtitle">
+        Create a new portfolio account. Data is stored in Firebase Firestore.
+      </p>
+
+      <form id="register-form" class="dashboard-form">
+        <label>
+          Name
+          <input type="text" id="register-name" required placeholder="Your full name">
+        </label>
+
+        <label>
+          Username (optional)
+          <input type="text" id="register-username" placeholder="username">
+        </label>
+
+        <label>
+          Email
+          <input type="email" id="register-email" required placeholder="you@example.com">
+        </label>
+
+        <label>
+          Password
+          <input type="password" id="register-password" required placeholder="Choose a password">
+        </label>
+
+        <button type="submit" class="primary-btn">Register</button>
+        <p id="register-message" class="save-message" aria-live="polite"></p>
+      </form>
+
+      <p class="auth-note">
+        Note: For this school project, passwords are stored in Firebase Auth.  
+        In a real production app, you would also enforce stronger rules and email verification.
+      </p>
+    </section>
+  </main>
+
+  <script type="module" src="script.js"></script>
+</body>
+</html>

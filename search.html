@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Search – PortfolioHub</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav class="top-nav">
+      <div class="nav-left">
+        <span class="logo">PortfolioHub</span>
+      </div>
+      <div class="nav-right">
+        <a href="index.html">Home</a>
+        <a href="search.html">Search</a>
+        <a href="login.html" id="login-link">Login / Register</a>
+        <a href="dashboard.html">Dashboard</a>
+        <button type="button" id="logout-btn">Logout</button>
+      </div>
+    </nav>
+
+    <main class="search-page">
+      <header class="search-header">
+        <h1>Search users &amp; projects</h1>
+        <p class="search-subtitle">
+          Type to search by user name, username, or project title/description.
+        </p>
+      </header>
+
+      <section class="search-controls">
+        <label class="search-label">
+          Search term
+          <input
+            type="text"
+            id="search-input"
+            placeholder="e.g. Anna, UI, news, portfolio"
+          />
+        </label>
+
+        <label class="search-label">
+          Search type
+          <select id="search-type">
+            <option value="users">Users</option>
+            <option value="projects">Projects</option>
+          </select>
+        </label>
+      </section>
+
+      <section class="search-results-section">
+        <p id="search-count" class="search-count">
+          Start typing to see results.
+        </p>
+        <div id="search-results" class="search-results">
+          <!-- Results will be injected by script.js -->
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="script.js"></script>
+  </body>
+</html>

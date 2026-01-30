@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard – PortfolioHub</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="top-nav">
+    <div class="nav-left">
+      <span class="logo">PortfolioHub</span>
+    </div>
+    <div class="nav-right">
+      <a href="index.html">Home</a>
+      <a href="search.html">Search</a>
+      <a href="login.html" id="login-link">Login / Register</a>
+      <a href="dashboard.html">Dashboard</a>
+      <button type="button" id="logout-btn">Logout</button>
+    </div>
+  </nav>
+
+  <main class="dashboard-page">
+    <header class="dashboard-header">
+      <h1>Dashboard</h1>
+      <p class="dashboard-subtitle">
+        You are editing the portfolio for: <span id="dashboard-current-user">Loading…</span>
+      </p>
+      <p class="dashboard-note">
+        Changes are saved in the cloud using Firebase Firestore.
+      </p>
+    </header>
+
+    <section class="dashboard-layout">
+      <!-- LEFT: Profile & contact editing -->
+      <section class="dashboard-panel">
+        <h2>Edit Profile &amp; Contact</h2>
+
+        <form id="profile-form" class="dashboard-form">
+          <label>
+            Name
+            <input type="text" id="profile-name-input" required>
+          </label>
+
+          <label>
+            Username
+            <input type="text" id="profile-username-input" placeholder="johndoe">
+          </label>
+
+          <label>
+            Date of birth
+            <input type="date" id="profile-dob-input">
+          </label>
+
+          <label>
+            Bio
+            <textarea id="profile-bio-input" rows="3" placeholder="Short description about the user"></textarea>
+          </label>
+
+          <label>
+            Email
+            <input type="email" id="profile-email-input" placeholder="user@example.com">
+          </label>
+
+          <label>
+            Socials
+            <input type="text" id="profile-socials-input" placeholder="@username or links">
+          </label>
+
+          <label>
+            Website
+            <input type="url" id="profile-website-input" placeholder="https://example.com">
+          </label>
+
+          <label>
+            Phone (optional)
+            <input type="tel" id="profile-phone-input" placeholder="+43 ...">
+          </label>
+
+          <button type="submit" class="primary-btn">Save profile</button>
+          <p id="profile-save-message" class="save-message" aria-live="polite"></p>
+        </form>
+      </section>
+
+      <!-- RIGHT: Projects editing -->
+      <section class="dashboard-panel">
+        <h2>Manage Projects</h2>
+
+        <div id="project-list" class="project-list">
+          <!-- Existing projects will be rendered here -->
+        </div>
+
+        <h3>Add new project</h3>
+        <form id="new-project-form" class="dashboard-form">
+          <label>
+            Project title
+            <input type="text" id="new-project-title" required>
+          </label>
+
+          <label>
+            Description
+            <textarea id="new-project-description" rows="2" required></textarea>
+          </label>
+
+          <label>
+            Link (optional)
+            <input type="url" id="new-project-link" placeholder="https://...">
+          </label>
+
+          <button type="submit" class="primary-btn">Add project</button>
+          <p id="project-save-message" class="save-message" aria-live="polite"></p>
+        </form>
+      </section>
+    </section>
+  </main>
+
+  <script type="module" src="script.js"></script>
+</body>
+</html>

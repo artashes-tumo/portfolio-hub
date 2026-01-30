@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>User Portfolio – Public View</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="top-nav">
+    <div class="nav-left">
+      <span class="logo">PortfolioHub</span>
+    </div>
+    <div class="nav-right">
+      <a href="index.html">Home</a>
+      <a href="search.html">Search</a>
+      <a href="login.html" id="login-link">Login / Register</a>
+      <a href="dashboard.html">Dashboard</a>
+      <button type="button" id="logout-btn">Logout</button>
+    </div>
+  </nav>
+
+  <main class="profile-page">
+    <!-- HEADER: Profile pic + main info -->
+    <header class="profile-header">
+      <div class="profile-pic">
+        <div class="profile-pic-placeholder">IMG</div>
+      </div>
+
+      <div class="profile-main-info">
+        <h1 class="profile-name">User Name</h1>
+        <p class="profile-username">@username</p>
+
+        <p class="profile-dob">
+          Date of birth: <span>Not provided</span>
+        </p>
+
+        <p class="profile-bio">
+          This is a short bio about the user.
+        </p>
+      </div>
+    </header>
+
+    <!-- MAIN CONTENT AREA: Projects + right column -->
+    <section class="profile-content">
+      <!-- PROJECTS GRID -->
+      <section class="projects-section">
+        <h2>Projects</h2>
+        <div class="projects-grid">
+          <!-- Project cards will be injected by script.js -->
+        </div>
+      </section>
+
+      <!-- RIGHT COLUMN: Skills + Contact -->
+      <aside class="sidebar">
+        <section class="skills-section">
+          <h2>Skills</h2>
+          <ul>
+            <!-- Skills will be injected by script.js -->
+          </ul>
+        </section>
+
+        <section class="contact-section">
+          <h2>Contact</h2>
+          <ul class="contact-list">
+            <!-- Contact items will be injected by script.js -->
+          </ul>
+        </section>
+      </aside>
+    </section>
+  </main>
+
+  <script type="module" src="script.js"></script>
+</body>
+</html>
