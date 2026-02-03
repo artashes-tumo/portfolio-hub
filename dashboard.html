@@ -2,21 +2,22 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dashboard – PortfolioHub</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <nav class="top-nav">
       <div class="nav-left">
-        <span class="logo">PortfolioHub</span>
+        <a class="logo" href="index.html">PortfolioHub</a>
       </div>
       <div class="nav-right">
-        <a href="index.html">Home</a>
-        <a href="search.html">Search</a>
-        <a href="criterion.html">Criteria</a>
-        <a href="login.html" id="login-link">Login / Register</a>
-        <a href="dashboard.html">Dashboard</a>
-        <button type="button" id="logout-btn">Logout</button>
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="search.html" class="nav-link">Search</a>
+        <a href="criterion.html" class="nav-link">Criteria</a>
+        <a href="login.html" class="nav-link" id="login-link">Login / Register</a>
+        <a href="dashboard.html" class="nav-link" id="dashboard-link">Dashboard</a>
+        <button type="button" class="nav-btn" id="logout-btn">Logout</button>
       </div>
     </nav>
 
@@ -27,13 +28,10 @@
           You are editing the portfolio for:
           <span id="dashboard-current-user">Loading…</span>
         </p>
-        <p class="dashboard-note">
-          Changes are saved in the cloud using Firebase Firestore.
-        </p>
+        <p class="dashboard-note">Changes are saved in the cloud using Firebase Firestore.</p>
       </header>
 
       <section class="dashboard-layout">
-        <!-- LEFT: Profile & contact editing -->
         <section class="dashboard-panel">
           <h2>Edit Profile &amp; Contact</h2>
 
@@ -45,11 +43,7 @@
 
             <label>
               Username
-              <input
-                type="text"
-                id="profile-username-input"
-                placeholder="johndoe"
-              />
+              <input type="text" id="profile-username-input" placeholder="johndoe" />
             </label>
 
             <label>
@@ -59,65 +53,43 @@
 
             <label>
               Bio
-              <textarea
-                id="profile-bio-input"
-                rows="3"
-                placeholder="Short description about the user"
-              ></textarea>
+              <textarea id="profile-bio-input" rows="3" placeholder="Short description about the user"></textarea>
+            </label>
+
+            <label>
+              Skills (comma separated)
+              <input type="text" id="profile-skills-input" placeholder="HTML, CSS, JavaScript" />
             </label>
 
             <label>
               Email
-              <input
-                type="email"
-                id="profile-email-input"
-                placeholder="user@example.com"
-              />
+              <input type="email" id="profile-email-input" placeholder="user@example.com" />
             </label>
 
             <label>
               Socials
-              <input
-                type="text"
-                id="profile-socials-input"
-                placeholder="@username or links"
-              />
+              <input type="text" id="profile-socials-input" placeholder="@username or links" />
             </label>
 
             <label>
               Website
-              <input
-                type="url"
-                id="profile-website-input"
-                placeholder="https://example.com"
-              />
+              <input type="url" id="profile-website-input" placeholder="https://example.com" />
             </label>
 
             <label>
               Phone (optional)
-              <input
-                type="tel"
-                id="profile-phone-input"
-                placeholder="+43 ..."
-              />
+              <input type="tel" id="profile-phone-input" placeholder="+43 ..." />
             </label>
 
             <button type="submit" class="primary-btn">Save profile</button>
-            <p
-              id="profile-save-message"
-              class="save-message"
-              aria-live="polite"
-            ></p>
+            <p id="profile-save-message" class="save-message" aria-live="polite"></p>
           </form>
         </section>
 
-        <!-- RIGHT: Projects editing -->
         <section class="dashboard-panel">
           <h2>Manage Projects</h2>
 
-          <div id="project-list" class="project-list">
-            <!-- Existing projects will be rendered here -->
-          </div>
+          <div id="project-list" class="project-list"></div>
 
           <h3>Add new project</h3>
           <form id="new-project-form" class="dashboard-form">
@@ -128,30 +100,28 @@
 
             <label>
               Description
-              <textarea
-                id="new-project-description"
-                rows="2"
-                required
-              ></textarea>
+              <textarea id="new-project-description" rows="2" required></textarea>
             </label>
 
             <label>
               Link (optional)
-              <input
-                type="url"
-                id="new-project-link"
-                placeholder="https://..."
-              />
+              <input type="url" id="new-project-link" placeholder="https://..." />
             </label>
 
             <button type="submit" class="primary-btn">Add project</button>
-            <p
-              id="project-save-message"
-              class="save-message"
-              aria-live="polite"
-            ></p>
+            <p id="project-save-message" class="save-message" aria-live="polite"></p>
           </form>
         </section>
+      </section>
+
+      <section class="dashboard-panel danger-panel">
+        <h2>Danger zone</h2>
+        <p class="dashboard-note">
+          Deleting your account will permanently remove your profile and projects. This cannot be undone.
+        </p>
+
+        <button id="delete-account-btn" class="danger-btn">Delete account permanently</button>
+        <p id="delete-account-message" class="save-message" aria-live="polite"></p>
       </section>
     </main>
 

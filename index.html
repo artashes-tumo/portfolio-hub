@@ -2,65 +2,66 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>User Portfolio – Public View</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PortfolioHub – Public Profile</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <!-- Navigation -->
     <nav class="top-nav">
       <div class="nav-left">
-        <span class="logo">PortfolioHub</span>
+        <a class="logo" href="index.html">PortfolioHub</a>
       </div>
       <div class="nav-right">
-        <a href="index.html">Home</a>
-        <a href="search.html">Search</a>
-        <a href="criterion.html">Criteria</a>
-        <a href="login.html" id="login-link">Login / Register</a>
-        <a href="dashboard.html">Dashboard</a>
-        <button type="button" id="logout-btn">Logout</button>
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="search.html" class="nav-link">Search</a>
+        <a href="criterion.html" class="nav-link">Criteria</a>
+        <a href="login.html" class="nav-link" id="login-link">Login / Register</a>
+        <a href="dashboard.html" class="nav-link" id="dashboard-link">Dashboard</a>
+        <button type="button" class="nav-btn" id="logout-btn">Logout</button>
       </div>
     </nav>
+
     <main class="profile-page">
-      <!-- HEADER: Profile pic + main info -->
       <header class="profile-header">
         <div class="profile-pic">
           <div class="profile-pic-placeholder">IMG</div>
         </div>
 
         <div class="profile-main-info">
-          <h1 class="profile-name">User Name</h1>
-          <p class="profile-username">@username</p>
+          <h1 class="profile-name">Loading…</h1>
+          <p class="profile-username"></p>
 
-          <p class="profile-dob">Date of birth: <span>Not provided</span></p>
+          <p class="profile-dob">
+            Date of birth: <span class="profile-dob-text">Not provided</span>
+          </p>
 
-          <p class="profile-bio">This is a short bio about the user.</p>
+          <p class="profile-bio"></p>
+
+          <div id="profile-empty-state" class="empty-state hidden">
+            <h2>Welcome to PortfolioHub</h2>
+            <p>
+              You can browse portfolios without registration. Go to the Search page to explore users and projects.
+            </p>
+            <a href="search.html" class="primary-btn inline-btn">Explore portfolios</a>
+          </div>
         </div>
       </header>
 
-      <!-- MAIN CONTENT AREA: Projects + right column -->
       <section class="profile-content">
-        <!-- PROJECTS GRID -->
         <section class="projects-section">
           <h2>Projects</h2>
-          <div class="projects-grid">
-            <!-- Project cards will be injected by script.js -->
-          </div>
+          <div class="projects-grid"></div>
         </section>
 
-        <!-- RIGHT COLUMN: Skills + Contact -->
         <aside class="sidebar">
           <section class="skills-section">
             <h2>Skills</h2>
-            <ul>
-              <!-- Skills will be injected by script.js -->
-            </ul>
+            <ul class="skills-list"></ul>
           </section>
 
           <section class="contact-section">
             <h2>Contact</h2>
-            <ul class="contact-list">
-              <!-- Contact items will be injected by script.js -->
-            </ul>
+            <ul class="contact-list"></ul>
           </section>
         </aside>
       </section>

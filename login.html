@@ -2,21 +2,22 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login / Register – PortfolioHub</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body class="auth-body">
     <nav class="top-nav">
       <div class="nav-left">
-        <span class="logo">PortfolioHub</span>
+        <a class="logo" href="index.html">PortfolioHub</a>
       </div>
       <div class="nav-right">
-        <a href="index.html">Home</a>
-        <a href="search.html">Search</a>
-        <a href="criterion.html">Criteria</a>
-        <a href="login.html" id="login-link">Login / Register</a>
-        <a href="dashboard.html">Dashboard</a>
-        <button type="button" id="logout-btn">Logout</button>
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="search.html" class="nav-link">Search</a>
+        <a href="criterion.html" class="nav-link">Criteria</a>
+        <a href="login.html" class="nav-link" id="login-link">Login / Register</a>
+        <a href="dashboard.html" class="nav-link" id="dashboard-link">Dashboard</a>
+        <button type="button" class="nav-btn" id="logout-btn">Logout</button>
       </div>
     </nav>
 
@@ -28,46 +29,27 @@
         <form id="login-form" class="dashboard-form">
           <label>
             Email
-            <input
-              type="email"
-              id="login-email"
-              required
-              placeholder="john@example.com"
-            />
+            <input type="email" id="login-email" required placeholder="you@example.com" />
           </label>
 
           <label>
             Password
-            <input
-              type="password"
-              id="login-password"
-              required
-              placeholder="••••••••"
-            />
+            <input type="password" id="login-password" required placeholder="••••••••" />
           </label>
 
           <button type="submit" class="primary-btn">Login</button>
           <p id="login-message" class="save-message" aria-live="polite"></p>
         </form>
 
-        <hr
-          style="border: none; border-top: 1px solid #374151; margin: 1.5rem 0"
-        />
+        <hr class="divider" />
 
         <h1>Register</h1>
-        <p class="auth-subtitle">
-          Create a new portfolio account. Data is stored in Firebase Firestore.
-        </p>
+        <p class="auth-subtitle">Create a new portfolio account (stored in Firebase).</p>
 
         <form id="register-form" class="dashboard-form">
           <label>
             Name
-            <input
-              type="text"
-              id="register-name"
-              required
-              placeholder="Your full name"
-            />
+            <input type="text" id="register-name" required placeholder="Your full name" />
           </label>
 
           <label>
@@ -77,45 +59,26 @@
 
           <label>
             Email
-            <input
-              type="email"
-              id="register-email"
-              required
-              placeholder="you@example.com"
-            />
+            <input type="email" id="register-email" required placeholder="you@example.com" />
           </label>
 
           <label>
             Password
-            <input
-              type="password"
-              id="register-password"
-              required
-              placeholder="Choose a password"
-            />
+            <input type="password" id="register-password" required placeholder="Choose a password" />
           </label>
 
           <button type="submit" class="primary-btn">Register</button>
           <p id="register-message" class="save-message" aria-live="polite"></p>
         </form>
 
-
-          <p class="auth-note">
-          Note: For this school project, data is stored in Firebase
-          (Authentication and Firestore) and used only for demonstration.
+        <p class="auth-note">
+          Note: This school project uses Firebase Authentication + Firestore.
         </p>
 
         <div class="auth-extra-actions">
-          <a href="criterion.html" class="link-button">
-            View assessment criteria (A–D)
-          </a>
-
-          <a href="search.html" class="secondary-btn">
-            Continue without registration
-          </a>
+          <a href="criterion.html" class="link-button">View assessment criteria (A–D)</a>
+          <a href="search.html" class="secondary-btn">Continue without registration</a>
         </div>
-      </section>
-    </main>
       </section>
     </main>
 

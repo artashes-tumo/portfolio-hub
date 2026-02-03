@@ -2,21 +2,23 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Assessment Criteria – PortfolioHub</title>
+    <link rel="stylesheet" href="criteria.css" />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body class="criteria-body">
     <nav class="top-nav">
       <div class="nav-left">
-        <span class="logo">PortfolioHub</span>
+        <a class="logo" href="index.html">PortfolioHub</a>
       </div>
       <div class="nav-right">
-        <a href="index.html">Home</a>
-        <a href="search.html">Search</a>
-        <a href="criterion.html">Criteria</a>
-        <a href="login.html" id="login-link">Login / Register</a>
-        <a href="dashboard.html">Dashboard</a>
-        <button type="button" id="logout-btn">Logout</button>
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="search.html" class="nav-link">Search</a>
+        <a href="criterion.html" class="nav-link">Criteria</a>
+        <a href="login.html" class="nav-link" id="login-link">Login / Register</a>
+        <a href="dashboard.html" class="nav-link" id="dashboard-link">Dashboard</a>
+        <button type="button" class="nav-btn" id="logout-btn">Logout</button>
       </div>
     </nav>
 
@@ -271,6 +273,6 @@
       </section>
     </main>
 
-    <script type="module" src="script.js"></script>
+   <script type="module" src="script.js"></script>
   </body>
 </html>
