@@ -2,48 +2,52 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Search – PortfolioHub</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Search — PortfolioHub</title>
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
+
+  <body data-page="search">
     <nav class="top-nav">
       <div class="nav-left">
         <a class="logo" href="index.html">PortfolioHub</a>
       </div>
+
       <div class="nav-right">
-        <a href="index.html" class="nav-link">Home</a>
-        <a href="search.html" class="nav-link">Search</a>
-        <a href="criterion.html" class="nav-link">Criteria</a>
-        <a href="login.html" class="nav-link" id="login-link">Login / Register</a>
-        <a href="dashboard.html" class="nav-link" id="dashboard-link">Dashboard</a>
-        <button type="button" class="nav-btn" id="logout-btn">Logout</button>
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="search.html">Search</a>
+        <a class="nav-link" href="criterion.html">Criteria</a>
+
+        <a class="nav-link" href="login.html" id="login-link">Login / Register</a>
+        <a class="nav-link hidden" href="dashboard.html" id="dashboard-link">Dashboard</a>
+        <button class="nav-btn hidden" type="button" id="logout-btn">Logout</button>
       </div>
     </nav>
 
-    <main class="search-page">
-      <header class="search-header">
+    <main class="container">
+      <header class="page-head">
         <h1>Search users &amp; projects</h1>
-        <p class="search-subtitle">Browse portfolios even without an account.</p>
+        <p class="muted">Guests can browse. Use the dropdown to search users or projects.</p>
       </header>
 
-      <section class="search-controls">
-        <label class="search-label">
-          Search term
-          <input type="text" id="search-input" placeholder="e.g. Anna, UI, news, portfolio" />
-        </label>
+      <section class="card panel search-panel">
+        <div class="search-controls">
+          <label class="field">
+            <span>Search term</span>
+            <input type="text" id="search-input" placeholder="e.g. Anna, UI, news, portfolio" />
+          </label>
 
-        <label class="search-label">
-          Search type
-          <select id="search-type">
-            <option value="users">Users</option>
-            <option value="projects">Projects</option>
-          </select>
-        </label>
-      </section>
+          <label class="field">
+            <span>Search type</span>
+            <select id="search-type">
+              <option value="users">Users</option>
+              <option value="projects">Projects</option>
+            </select>
+          </label>
+        </div>
 
-      <section class="search-results-section">
-        <p id="search-count" class="search-count">Loading users…</p>
+        <p id="search-count" class="tiny muted">Start typing to see results.</p>
+
         <div id="search-results" class="search-results"></div>
       </section>
     </main>

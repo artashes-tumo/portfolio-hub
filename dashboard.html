@@ -2,126 +2,168 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dashboard – PortfolioHub</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Dashboard — PortfolioHub</title>
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
+
+  <body data-page="dashboard">
     <nav class="top-nav">
       <div class="nav-left">
         <a class="logo" href="index.html">PortfolioHub</a>
       </div>
+
       <div class="nav-right">
-        <a href="index.html" class="nav-link">Home</a>
-        <a href="search.html" class="nav-link">Search</a>
-        <a href="criterion.html" class="nav-link">Criteria</a>
-        <a href="login.html" class="nav-link" id="login-link">Login / Register</a>
-        <a href="dashboard.html" class="nav-link" id="dashboard-link">Dashboard</a>
-        <button type="button" class="nav-btn" id="logout-btn">Logout</button>
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="search.html">Search</a>
+        <a class="nav-link" href="criterion.html">Criteria</a>
+
+        <a class="nav-link" href="login.html" id="login-link">Login / Register</a>
+        <a class="nav-link hidden" href="dashboard.html" id="dashboard-link">Dashboard</a>
+        <button class="nav-btn hidden" type="button" id="logout-btn">Logout</button>
       </div>
     </nav>
 
-    <main class="dashboard-page">
-      <header class="dashboard-header">
+    <main class="container">
+      <header class="page-head">
         <h1>Dashboard</h1>
-        <p class="dashboard-subtitle">
-          You are editing the portfolio for:
-          <span id="dashboard-current-user">Loading…</span>
-        </p>
-        <p class="dashboard-note">Changes are saved in the cloud using Firebase Firestore.</p>
+        <p class="muted">You are editing: <span id="dashboard-current-user">Loading…</span></p>
+        <p class="tiny muted">Changes are saved in the cloud using Firestore.</p>
       </header>
 
-      <section class="dashboard-layout">
-        <section class="dashboard-panel">
-          <h2>Edit Profile &amp; Contact</h2>
+      <section class="dash-grid">
+        <!-- Profile -->
+        <section class="card panel">
+          <div class="panel-head">
+            <h2>Edit Profile &amp; Contact</h2>
+            <p class="muted">This controls what people see on your public profile.</p>
+          </div>
 
-          <form id="profile-form" class="dashboard-form">
-            <label>
-              Name
-              <input type="text" id="profile-name-input" required />
+          <form id="profile-form" class="form">
+            <div class="field-row">
+              <label class="field">
+                <span>Name</span>
+                <input type="text" id="profile-name-input" required />
+              </label>
+
+              <label class="field">
+                <span>Username</span>
+                <input type="text" id="profile-username-input" placeholder="tesnenq" />
+              </label>
+            </div>
+
+            <div class="field-row">
+              <label class="field">
+                <span>Date of birth</span>
+                <input type="date" id="profile-dob-input" />
+              </label>
+
+              <label class="field">
+                <span>Profile picture URL (optional)</span>
+                <input type="url" id="profile-pic-input" placeholder="https://..." />
+              </label>
+            </div>
+
+            <label class="field">
+              <span>Bio</span>
+              <textarea id="profile-bio-input" rows="3" placeholder="Short description about you"></textarea>
             </label>
 
-            <label>
-              Username
-              <input type="text" id="profile-username-input" placeholder="johndoe" />
+            <label class="field">
+              <span>Skills (comma separated)</span>
+              <input type="text" id="profile-skills-input" placeholder="HTML, CSS, JavaScript, Firebase" />
             </label>
 
-            <label>
-              Date of birth
-              <input type="date" id="profile-dob-input" />
-            </label>
+            <div class="field-row">
+              <label class="field">
+                <span>Email</span>
+                <input type="email" id="profile-email-input" placeholder="you@example.com" />
+              </label>
 
-            <label>
-              Bio
-              <textarea id="profile-bio-input" rows="3" placeholder="Short description about the user"></textarea>
-            </label>
+              <label class="field">
+                <span>Phone (optional)</span>
+                <input type="tel" id="profile-phone-input" placeholder="+43 ..." />
+              </label>
+            </div>
 
-            <label>
-              Skills (comma separated)
-              <input type="text" id="profile-skills-input" placeholder="HTML, CSS, JavaScript" />
-            </label>
+            <div class="field-row">
+              <label class="field">
+                <span>Socials</span>
+                <input type="text" id="profile-socials-input" placeholder="@username or links" />
+              </label>
 
-            <label>
-              Email
-              <input type="email" id="profile-email-input" placeholder="user@example.com" />
-            </label>
+              <label class="field">
+                <span>Website</span>
+                <input type="url" id="profile-website-input" placeholder="https://example.com" />
+              </label>
+            </div>
 
-            <label>
-              Socials
-              <input type="text" id="profile-socials-input" placeholder="@username or links" />
-            </label>
-
-            <label>
-              Website
-              <input type="url" id="profile-website-input" placeholder="https://example.com" />
-            </label>
-
-            <label>
-              Phone (optional)
-              <input type="tel" id="profile-phone-input" placeholder="+43 ..." />
-            </label>
-
-            <button type="submit" class="primary-btn">Save profile</button>
-            <p id="profile-save-message" class="save-message" aria-live="polite"></p>
+            <button type="submit" class="btn btn-primary btn-block">Save profile</button>
+            <p id="profile-save-message" class="form-message" aria-live="polite"></p>
           </form>
         </section>
 
-        <section class="dashboard-panel">
-          <h2>Manage Projects</h2>
+        <!-- Projects -->
+        <section class="card panel">
+          <div class="panel-head">
+            <h2>Manage Projects</h2>
+            <p class="muted">Add projects that appear as cards on your profile.</p>
+          </div>
 
           <div id="project-list" class="project-list"></div>
 
-          <h3>Add new project</h3>
-          <form id="new-project-form" class="dashboard-form">
-            <label>
-              Project title
-              <input type="text" id="new-project-title" required />
+          <div class="divider"></div>
+
+          <h3 class="subhead">Add new project</h3>
+          <form id="new-project-form" class="form">
+            <label class="field">
+              <span>Project title</span>
+              <input type="text" placeholder="Name of project" id="new-project-title" required />
             </label>
 
-            <label>
-              Description
-              <textarea id="new-project-description" rows="2" required></textarea>
+            <label class="field">
+              <span>Description</span>
+              <textarea id="new-project-description" placeholder="About your project" rows="2" required></textarea>
             </label>
 
-            <label>
-              Link (optional)
+            <label class="field">
+              <span>Link (optional)</span>
               <input type="url" id="new-project-link" placeholder="https://..." />
             </label>
 
-            <button type="submit" class="primary-btn">Add project</button>
-            <p id="project-save-message" class="save-message" aria-live="polite"></p>
+            <button type="submit" class="btn btn-primary btn-block">Add project</button>
+            <p id="project-save-message" class="form-message" aria-live="polite"></p>
           </form>
+
+          <div class="divider"></div>
+
+          <section class="danger-zone">
+            <h3 class="subhead danger-title">Danger zone</h3>
+            <p class="tiny muted">
+              This permanently deletes your profile document and your Firebase account.
+              (Firebase may require recent login.)
+            </p>
+
+            <label class="field">
+              <span style="color: red;">Confirm password (to delete)</span>
+              <input
+                type="password"
+                id="delete-password"
+                placeholder="Enter your password"
+                autocomplete="current-password"
+              />
+            </label>
+
+            <br>
+
+            <button type="button" class="btn btn-danger btn-block" id="delete-account-btn">
+              Delete account
+            </button>
+
+
+            <p id="delete-message" class="form-message" aria-live="polite"></p>
+          </section>
         </section>
-      </section>
-
-      <section class="dashboard-panel danger-panel">
-        <h2>Danger zone</h2>
-        <p class="dashboard-note">
-          Deleting your account will permanently remove your profile and projects. This cannot be undone.
-        </p>
-
-        <button id="delete-account-btn" class="danger-btn">Delete account permanently</button>
-        <p id="delete-account-message" class="save-message" aria-live="polite"></p>
       </section>
     </main>
 

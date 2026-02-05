@@ -2,71 +2,129 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PortfolioHub – Public Profile</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PortfolioHub — Public Profile</title>
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
+
+  <body data-page="profile">
     <nav class="top-nav">
       <div class="nav-left">
         <a class="logo" href="index.html">PortfolioHub</a>
       </div>
+
       <div class="nav-right">
-        <a href="index.html" class="nav-link">Home</a>
-        <a href="search.html" class="nav-link">Search</a>
-        <a href="criterion.html" class="nav-link">Criteria</a>
-        <a href="login.html" class="nav-link" id="login-link">Login / Register</a>
-        <a href="dashboard.html" class="nav-link" id="dashboard-link">Dashboard</a>
-        <button type="button" class="nav-btn" id="logout-btn">Logout</button>
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="search.html">Search</a>
+        <a class="nav-link" href="criterion.html">Criteria</a>
+
+        <a class="nav-link" href="login.html" id="login-link">Login / Register</a>
+        <a class="nav-link hidden" href="dashboard.html" id="dashboard-link">Dashboard</a>
+        <button class="nav-btn hidden" type="button" id="logout-btn">Logout</button>
       </div>
     </nav>
 
-    <main class="profile-page">
-      <header class="profile-header">
-        <div class="profile-pic">
-          <div class="profile-pic-placeholder">IMG</div>
-        </div>
-
-        <div class="profile-main-info">
-          <h1 class="profile-name">Loading…</h1>
-          <p class="profile-username"></p>
-
-          <p class="profile-dob">
-            Date of birth: <span class="profile-dob-text">Not provided</span>
-          </p>
-
-          <p class="profile-bio"></p>
-
-          <div id="profile-empty-state" class="empty-state hidden">
-            <h2>Welcome to PortfolioHub</h2>
-            <p>
-              You can browse portfolios without registration. Go to the Search page to explore users and projects.
+    <main class="container">
+      <!-- Guest hero -->
+      <section class="card hero-card" id="landing-card">
+        <div class="hero-content">
+          <div>
+            <p class="chip chip-primary">PortfolioHub</p>
+            <h1 class="hero-title">Welcome to PortfolioHub</h1>
+            <p class="hero-subtitle">
+              Explore student portfolios and projects. You can browse without registration,
+              or create an account to build your own portfolio.
             </p>
-            <a href="search.html" class="primary-btn inline-btn">Explore portfolios</a>
+
+            <div class="hero-actions">
+              <a class="btn btn-ghost" href="login.html">Create account</a>
+            </div>
+
+            <p class="hero-hint">
+              Teacher view: see <a class="text-link" href="criterion.html">Criteria A–D</a>.
+            </p>
+          </div>
+
+          <div class="hero-metric-grid" aria-hidden="true">
+            <div class="metric">
+              <div class="metric-k">Cloud</div>
+              <div class="metric-v">Firestore</div>
+            </div>
+            <div class="metric">
+              <div class="metric-k">Auth</div>
+              <div class="metric-v">Email/Password</div>
+            </div>
+            <div class="metric">
+              <div class="metric-k">UI</div>
+              <div class="metric-v">Responsive</div>
+            </div>
           </div>
         </div>
-      </header>
+      </section>
 
-      <section class="profile-content">
-        <section class="projects-section">
-          <h2>Projects</h2>
-          <div class="projects-grid"></div>
+      <!-- Profile -->
+      <section class="profile-page card" id="profile-card">
+        <header class="profile-header">
+          <div class="profile-pic">
+            <div class="profile-pic-placeholder" aria-label="Profile picture">IMG</div>
+          </div>
+
+          <div class="profile-main-info">
+            <h2 class="profile-name">PortfolioHub</h2>
+            <p class="profile-username hidden"></p>
+
+            <p class="profile-dob">
+              Date of birth: <span class="profile-dob-text">Not provided</span>
+            </p>
+
+            <p class="profile-bio">
+              Browse portfolios without registration. Use Search to explore users and projects.
+            </p>
+
+            <div class="profile-actions">
+              <a class="btn btn-primary" href="search.html">Explore portfolios</a>
+            </div>
+          </div>
+        </header>
+
+        <section class="profile-content">
+          <section class="projects-section">
+            <div class="section-head">
+              <h3>Projects</h3>
+              <p class="muted">Project cards are loaded from Firestore.</p>
+            </div>
+
+            <div class="projects-grid">
+              <!-- injected by script.js -->
+            </div>
+          </section>
+
+          <aside class="sidebar">
+            <section class="sidebar-card">
+              <div class="section-head">
+                <h3>Skills</h3>
+                <p class="muted">Shown as tags.</p>
+              </div>
+              <ul class="skills-list">
+                <!-- injected by script.js -->
+              </ul>
+            </section>
+
+            <section class="sidebar-card">
+              <div class="section-head">
+                <h3>Contact</h3>
+                <p class="muted">Email, website, socials.</p>
+              </div>
+              <ul class="contact-list">
+                <!-- injected by script.js -->
+              </ul>
+            </section>
+          </aside>
         </section>
-
-        <aside class="sidebar">
-          <section class="skills-section">
-            <h2>Skills</h2>
-            <ul class="skills-list"></ul>
-          </section>
-
-          <section class="contact-section">
-            <h2>Contact</h2>
-            <ul class="contact-list"></ul>
-          </section>
-        </aside>
       </section>
     </main>
 
+    <!-- IMPORTANT: must be module (Firebase uses ES modules) -->
     <script type="module" src="script.js"></script>
   </body>
 </html>

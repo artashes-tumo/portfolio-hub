@@ -2,83 +2,138 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login / Register – PortfolioHub</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Login / Register — PortfolioHub</title>
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body class="auth-body">
+
+  <body data-page="auth" class="auth-body">
     <nav class="top-nav">
       <div class="nav-left">
         <a class="logo" href="index.html">PortfolioHub</a>
       </div>
+
       <div class="nav-right">
-        <a href="index.html" class="nav-link">Home</a>
-        <a href="search.html" class="nav-link">Search</a>
-        <a href="criterion.html" class="nav-link">Criteria</a>
-        <a href="login.html" class="nav-link" id="login-link">Login / Register</a>
-        <a href="dashboard.html" class="nav-link" id="dashboard-link">Dashboard</a>
-        <button type="button" class="nav-btn" id="logout-btn">Logout</button>
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="search.html">Search</a>
+        <a class="nav-link" href="criterion.html">Criteria</a>
+
+        <a class="nav-link" href="login.html" id="login-link">Login / Register</a>
+        <a class="nav-link hidden" href="dashboard.html" id="dashboard-link">Dashboard</a>
+        <button class="nav-btn hidden" type="button" id="logout-btn">Logout</button>
       </div>
     </nav>
 
-    <main class="auth-container">
-      <section class="auth-card">
-        <h1>Login</h1>
-        <p class="auth-subtitle">Sign in with your email and password.</p>
+    <main class="container auth-page">
+      <section class="auth-shell">
+        <aside class="card auth-info">
+          <p class="chip chip-glow">PortfolioHub</p>
+          <h1 class="auth-title">Create a portfolio with real accounts</h1>
+          <p class="auth-lead">
+            Register to save your profile and projects to the cloud. Or continue as a guest to explore.
+          </p>
 
-        <form id="login-form" class="dashboard-form">
-          <label>
-            Email
-            <input type="email" id="login-email" required placeholder="you@example.com" />
-          </label>
+          <ul class="auth-list">
+            <li><span class="dot"></span> Email/password authentication</li>
+            <li><span class="dot"></span> Firestore database (profiles + projects)</li>
+            <li><span class="dot"></span> Public profile pages</li>
+            <li><span class="dot"></span> Search users and projects</li>
+          </ul>
 
-          <label>
-            Password
-            <input type="password" id="login-password" required placeholder="••••••••" />
-          </label>
+          <div class="auth-side-actions">
+            <a class="btn btn-primary" href="search.html">Continue without registration</a>
+            <a class="btn btn-ghost" href="criterion.html">View assessment criteria (A–D)</a>
+          </div>
 
-          <button type="submit" class="primary-btn">Login</button>
-          <p id="login-message" class="save-message" aria-live="polite"></p>
-        </form>
+          <p class="tiny muted">
+            Tip: local testing works best on <code>http://localhost</code>.
+          </p>
+        </aside>
 
-        <hr class="divider" />
+        <section class="card auth-panel">
+          <div class="tabs" role="tablist" aria-label="Authentication tabs">
+            <button class="tab is-active" type="button" data-tab="login">Login</button>
+            <button class="tab" type="button" data-tab="register">Register</button>
+          </div>
 
-        <h1>Register</h1>
-        <p class="auth-subtitle">Create a new portfolio account (stored in Firebase).</p>
+          <!-- LOGIN -->
+          <form id="login-form" class="form tab-panel" data-panel="login">
+            <div class="form-head">
+              <h2>Login</h2>
+              <p class="muted">Sign in to edit your portfolio.</p>
+            </div>
 
-        <form id="register-form" class="dashboard-form">
-          <label>
-            Name
-            <input type="text" id="register-name" required placeholder="Your full name" />
-          </label>
+            <label class="field">
+              <span>Email</span>
+              <input type="email" id="login-email" required placeholder="you@example.com" autocomplete="email" />
+            </label>
 
-          <label>
-            Username (optional)
-            <input type="text" id="register-username" placeholder="username" />
-          </label>
+            <label class="field">
+              <span>Password</span>
+              <div class="input-wrap">
+                <input
+                  type="password"
+                  id="login-password"
+                  required
+                  placeholder="••••••••"
+                  autocomplete="current-password"
+                />
+                <button class="icon-btn" type="button" data-toggle="login-password">Show</button>
+              </div>
+            </label>
 
-          <label>
-            Email
-            <input type="email" id="register-email" required placeholder="you@example.com" />
-          </label>
+            <button type="submit" class="btn btn-primary btn-block">Login</button>
+            <p id="login-message" class="form-message" aria-live="polite"></p>
 
-          <label>
-            Password
-            <input type="password" id="register-password" required placeholder="Choose a password" />
-          </label>
+          </form>
 
-          <button type="submit" class="primary-btn">Register</button>
-          <p id="register-message" class="save-message" aria-live="polite"></p>
-        </form>
+          <!-- REGISTER -->
+          <form id="register-form" class="form tab-panel hidden" data-panel="register">
+            <div class="form-head">
+              <h2>Register</h2>
+              <p class="muted">Create a new account (saved in Firestore).</p>
+            </div>
 
-        <p class="auth-note">
-          Note: This school project uses Firebase Authentication + Firestore.
-        </p>
+            <label class="field">
+              <span>Name</span>
+              <input type="text" id="register-name" required placeholder="Your full name" autocomplete="name" />
+            </label>
 
-        <div class="auth-extra-actions">
-          <a href="criterion.html" class="link-button">View assessment criteria (A–D)</a>
-          <a href="search.html" class="secondary-btn">Continue without registration</a>
-        </div>
+            <label class="field">
+              <span>Username (optional)</span>
+              <input type="text" id="register-username" placeholder="@username" autocomplete="nickname" />
+            </label>
+
+            <label class="field">
+              <span>Email</span>
+              <input type="email" id="register-email" required placeholder="you@example.com" autocomplete="email" />
+            </label>
+
+            <label class="field">
+              <span>Password</span>
+              <div class="input-wrap">
+                <input
+                  type="password"
+                  id="register-password"
+                  required
+                  placeholder="Choose a strong password"
+                  autocomplete="new-password"
+                />
+                <button class="icon-btn" type="button" data-toggle="register-password">Show</button>
+              </div>
+
+              <br>
+
+              <div class="strength" aria-hidden="true">
+                <div class="strength-bar" id="strength-bar"></div>
+              </div>
+              <p class="tiny muted" id="strength-text">Use 8+ chars with numbers and letters.</p>
+            </label>
+
+            <button type="submit" class="btn btn-primary btn-block">Create account</button>
+            <p id="register-message" class="form-message" aria-live="polite"></p>
+          </form>
+        </section>
       </section>
     </main>
 
