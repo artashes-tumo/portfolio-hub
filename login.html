@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Login / Register — PortfolioHub</title>
+    <link
+      rel="stylesheet"
+      href="assets/css/dark_no_animation.css"
+      id="theme-link"
+    />
+  </head>
+
+  <body data-page="auth" class="auth-body">
+    <nav class="top-nav">
+      <div class="nav-left">
+        <a class="logo" href="index.html">PortfolioHub</a>
+      </div>
+
+      <div class="nav-right">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="search.html">Search</a>
+        <a class="nav-link" href="criterion.html">Criteria</a>
+
+        <a class="nav-link" href="login.html" id="login-link"
+          >Login / Register</a
+        >
+        <a class="nav-link hidden" href="dashboard.html" id="dashboard-link"
+          >Dashboard</a
+        >
+        <button class="nav-btn hidden" type="button" id="logout-btn">
+          Logout
+        </button>
+      </div>
+    </nav>
+
+    <main class="container auth-page">
+      <section class="auth-shell">
+        <aside class="card auth-info">
+          <p class="chip chip-glow">PortfolioHub</p>
+          <h1 class="auth-title">Create a portfolio with real accounts</h1>
+          <p class="auth-lead">
+            Register to save your profile and projects to the cloud. Or continue
+            as a guest to explore.
+          </p>
+
+          <ul class="auth-list">
+            <li><span class="dot"></span> Email/password authentication</li>
+            <li>
+              <span class="dot"></span> Firestore database (profiles + projects)
+            </li>
+            <li><span class="dot"></span> Public profile pages</li>
+            <li><span class="dot"></span> Search users and projects</li>
+          </ul>
+
+          <div class="auth-side-actions">
+            <a class="btn btn-primary" href="search.html"
+              >Continue without registration</a
+            >
+            <a class="btn btn-ghost" href="criterion.html"
+              >View assessment criteria (A–D)</a
+            >
+          </div>
+
+          <p class="tiny muted">
+            Tip: local testing works best on <code>http://localhost</code>.
+          </p>
+        </aside>
+
+        <section class="card auth-panel">
+          <div class="tabs" role="tablist" aria-label="Authentication tabs">
+            <button class="tab is-active" type="button" data-tab="login">
+              Login
+            </button>
+            <button class="tab" type="button" data-tab="register">
+              Register
+            </button>
+          </div>
+
+          <!-- LOGIN -->
+          <form id="login-form" class="form tab-panel" data-panel="login">
+            <div class="form-head">
+              <h2>Login</h2>
+              <p class="muted">Sign in to edit your portfolio.</p>
+            </div>
+
+            <label class="field">
+              <span>Email</span>
+              <input
+                type="email"
+                id="login-email"
+                required
+                placeholder="you@example.com"
+                autocomplete="email"
+              />
+            </label>
+
+            <label class="field">
+              <span>Password</span>
+              <div class="input-wrap">
+                <input
+                  type="password"
+                  id="login-password"
+                  required
+                  placeholder="••••••••"
+                  autocomplete="current-password"
+                />
+                <button
+                  class="icon-btn"
+                  type="button"
+                  data-toggle="login-password"
+                >
+                  Show
+                </button>
+              </div>
+            </label>
+
+            <button type="submit" class="btn btn-primary btn-block">
+              Login
+            </button>
+            <p id="login-message" class="form-message" aria-live="polite"></p>
+          </form>
+
+          <!-- REGISTER -->
+          <form
+            id="register-form"
+            class="form tab-panel hidden"
+            data-panel="register"
+          >
+            <div class="form-head">
+              <h2>Register</h2>
+              <p class="muted">Create a new account (saved in Firestore).</p>
+            </div>
+
+            <label class="field">
+              <span>Name</span>
+              <input
+                type="text"
+                id="register-name"
+                required
+                placeholder="Your full name"
+                autocomplete="name"
+              />
+            </label>
+
+            <label class="field">
+              <span>Username (optional)</span>
+              <input
+                type="text"
+                id="register-username"
+                placeholder="@username"
+                autocomplete="nickname"
+              />
+            </label>
+
+            <label class="field">
+              <span>Email</span>
+              <input
+                type="email"
+                id="register-email"
+                required
+                placeholder="you@example.com"
+                autocomplete="email"
+              />
+            </label>
+
+            <label class="field">
+              <span>Password</span>
+              <div class="input-wrap">
+                <input
+                  type="password"
+                  id="register-password"
+                  required
+                  placeholder="Choose a strong password"
+                  autocomplete="new-password"
+                />
+                <button
+                  class="icon-btn"
+                  type="button"
+                  data-toggle="register-password"
+                >
+                  Show
+                </button>
+              </div>
+
+              <br />
+
+              <div class="strength" aria-hidden="true">
+                <div class="strength-bar" id="strength-bar"></div>
+              </div>
+              <p class="tiny muted" id="strength-text">
+                Use 8+ chars with numbers and letters.
+              </p>
+            </label>
+
+            <button type="submit" class="btn btn-primary btn-block">
+              Create account
+            </button>
+            <p
+              id="register-message"
+              class="form-message"
+              aria-live="polite"
+            ></p>
+          </form>
+        </section>
+      </section>
+    </main>
+
+    <script type="module" src="assets/js/script.js"></script>
+    <script src="assets/js/theme-toggle.js"></script>
+  </body>
+</html>
