@@ -915,3 +915,9 @@ body.criteria-body {
     max-width: 1600px;
   }
 }
+
+@media (min-width: 1800px) {
+  .criteria-page {
+    max-width: 1800px;
+  }
+}
