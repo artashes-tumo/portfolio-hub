@@ -772,7 +772,6 @@ async function runPage() {
     return;
   }
 
-  // criteria page doesn't require JS besides nav auth state
 }
 
 // =========================
