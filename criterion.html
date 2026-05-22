@@ -15,9 +15,118 @@
   <style>
     img {
       max-width: 100%;
-      border-radius: 8px;
-      margin: 1rem 0;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+      border-radius: 12px;
+      margin: 1.5rem 0;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    }
+
+    /* Enhanced Criterion D Styling */
+    .criterion-d-content {
+      max-width: 100%;
+      line-height: 1.75;
+    }
+
+    .criterion-d-content h3 {
+      font-size: 1.35rem;
+      margin: 2.5rem 0 1rem;
+      color: #f1f5f9;
+      border-bottom: 2px solid #60a5fa;
+      padding-bottom: 0.5rem;
+    }
+
+    .criterion-d-content h4 {
+      font-size: 1.1rem;
+      margin: 1.75rem 0 0.75rem;
+      color: #e0f2fe;
+    }
+
+    .d-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      background: rgba(15, 23, 42, 0.6);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    }
+
+    .d-table th,
+    .d-table td {
+      padding: 1rem 1.1rem;
+      text-align: left;
+      border-bottom: 1px solid rgba(148, 163, 184, 0.25);
+    }
+
+    .d-table th {
+      background: rgba(59, 130, 246, 0.25);
+      color: #bae6fd;
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      letter-spacing: 0.5px;
+    }
+
+    .d-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .d-success {
+      background: rgba(34, 197, 94, 0.15);
+      color: #86efac;
+      padding: 0.35rem 0.75rem;
+      border-radius: 9999px;
+      font-weight: 600;
+      display: inline-block;
+      font-size: 0.9rem;
+    }
+
+    .d-partial {
+      background: rgba(234, 179, 8, 0.2);
+      color: #fde047;
+      padding: 0.35rem 0.75rem;
+      border-radius: 9999px;
+      font-weight: 600;
+      display: inline-block;
+      font-size: 0.9rem;
+    }
+
+    .evaluation-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+      gap: 2rem;
+      margin: 2rem 0;
+    }
+
+    .eval-card {
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid rgba(148, 163, 184, 0.3);
+      border-radius: 16px;
+      padding: 1.75rem;
+    }
+
+    .eval-number {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: #60a5fa;
+      opacity: 0.15;
+      position: absolute;
+      right: 1rem;
+      top: 0.5rem;
+    }
+
+    .improvement-list li,
+    .impact-list li {
+      margin-bottom: 1rem;
+      padding-left: 1.25rem;
+      position: relative;
+    }
+
+    .improvement-list li::before,
+    .impact-list li::before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      color: #60a5fa;
     }
   </style>
 </head>
@@ -31,8 +140,8 @@
     <div class="nav-right">
       <a href="index.html" class="nav-link">Home</a>
       <a href="search.html" class="nav-link">Search</a>
-      <a href="criterion.html" class="nav-link">Criteria</a>
       <a href="dashboard.html" class="nav-link" id="dashboard-link">Dashboard</a>
+      <a href="login.html" class="nav-link">Sign In/Sign Up</a>
     </div>
   </nav>
 
@@ -75,9 +184,7 @@
             <li><a href="#a2">A2 — Research plan</a></li>
             <li><a href="#a3">A3 — Existing product analysis</a></li>
             <li><a href="#a4">A4 — Design brief</a></li>
-            <li>
-              <a href="#technical-skills">Technical Skills Used/Required</a>
-            </li>
+            <li><a href="#technical-skills">Technical Skills Used/Required</a></li>
           </ul>
         </div>
 
@@ -90,7 +197,6 @@
             <li><a href="#b4">B4 — Design evaluation</a></li>
           </ul>
         </div>
-        </ul>
 
         <div class="toc-col">
           <h3>Criterion C</h3>
@@ -98,17 +204,17 @@
             <li><a href="#criterion-c">Video Walkthrough</a></li>
           </ul>
         </div>
-      </div>
 
 
-
-      <br>
-      <div class="toc-col">
-        <h3>Other criteria</h3>
-        <ul>
-          <li><a href="#criterion-d">Criterion D — Evaluation</a></li>
-        </ul>
-      </div>
+        <div class="toc-col">
+          <h3>Criterion D</h3>
+          <ul>
+            <li><a href="#d1">D1 — Design Specification</a></li>
+            <li><a href="#d2">D2 — Evaluation Against Success Criteria</a></li>
+            <li><a href="#d3">D3 — Improvements</a></li>
+            <li><a href="#d4">D4 — Impact of the Solution</a></li>
+          </ul>
+        </div>
       </div>
     </section>
 
@@ -143,12 +249,10 @@
           </p>
         </div>
 
-        <!-- A1 – highlighted key parts -->
         <section class="criteria-section" id="a1">
           <h3 class="criteria-section-title">
             A1 — Explain and justify the need for a solution
           </h3>
-
           <div class="criteria-body-grid">
             <div class="criteria-body-column">
               <h4>Situation and context</h4>
@@ -160,7 +264,6 @@
                 <span style="color: lime; font-weight: bold">work across devices</span>, and can present information in
                 a structured way.
               </p>
-
               <p>
                 In school projects, evidence of learning is often spread
                 across many places (local files, repositories, cloud folders,
@@ -168,7 +271,6 @@
                 students find it harder to present their best work clearly,
                 and teachers spend extra time locating and reviewing it.
               </p>
-
               <h4>The design problem</h4>
               <p>
                 The problem PortfolioHub solves is that students typically do
@@ -180,25 +282,16 @@
                 external viewers.
               </p>
             </div>
-
             <div class="criteria-body-column">
               <h4>Users affected by the problem</h4>
               <ul>
-                <li>
-                  <strong>Students:</strong> need one place to organise and
-                  share projects with context (skills, descriptions, links).
-                </li>
-                <li>
-                  <strong>Teachers:</strong> need a
-                  <span style="color: lime; font-weight: bold">consistent structure</span>
-                  to review progress and evidence efficiently.
-                </li>
-                <li>
-                  <strong>External reviewers:</strong> need quick access to a
-                  clear overview of abilities and project examples.
-                </li>
+                <li><strong>Students:</strong> need one place to organise and share projects with context (skills,
+                  descriptions, links).</li>
+                <li><strong>Teachers:</strong> need a <span style="color: lime; font-weight: bold">consistent
+                    structure</span> to review progress and evidence efficiently.</li>
+                <li><strong>External reviewers:</strong> need quick access to a clear overview of abilities and project
+                  examples.</li>
               </ul>
-
               <h4>Why the problem matters</h4>
               <p>
                 Educational literature describes how
@@ -207,7 +300,6 @@
                 over time, and communicating achievement—exactly the areas
                 that become difficult when evidence is scattered.
               </p>
-
               <h4>Why a website is an appropriate solution</h4>
               <p>
                 A web-based solution is appropriate because it is
@@ -221,7 +313,6 @@
           </div>
         </section>
 
-        <!-- A2 – highlighted priorities and outputs -->
         <section class="criteria-section" id="a2">
           <h3 class="criteria-section-title">
             A2 — Identify and prioritise primary and secondary research
@@ -390,7 +481,6 @@
           </div>
         </section>
 
-        <!-- A3 – already had short highlights, kept as is but ensured consistency -->
         <section class="criteria-section" id="a3">
           <h3 class="criteria-section-title">
             A3 — Analyse a range of existing products that inspire a solution
@@ -592,7 +682,6 @@
           </details>
         </section>
 
-        <!-- A4 – highlighted -->
         <section class="criteria-section" id="a4">
           <h3 class="criteria-section-title">
             A4 — Develop a detailed design brief summarising relevant research
@@ -741,433 +830,370 @@
           </div>
         </section>
 
-        <!-- Technical Skills – highlighted -->
-        <section class="criteria-section" id="technical-skills">
-          <h3 class="criteria-section-title">
-            Technical Skills Used / Required
-          </h3>
-          <p class="criteria-lead">
-            Developing PortfolioHub required and demonstrated the following
-            <span style="color: lime; font-weight: bold">specific technical abilities</span>:
-          </p>
-
-          <div class="criteria-split">
-            <div class="criteria-mini">
-              <h4>Frontend Development</h4>
-              <ul>
-                <li>
-                  HTML5 semantic markup and
-                  <span style="color: lime; font-weight: bold">accessibility (ARIA)</span>
-                </li>
-                <li>CSS3 (Flexbox, Grid, responsive design, animations)</li>
-                <li>
-                  JavaScript (ES6+ modules, DOM manipulation, async/await)
-                </li>
-                <li>
-                  <span style="color: lime; font-weight: bold">Mobile-first</span>
-                  design principles
-                </li>
-              </ul>
-            </div>
-            <div class="criteria-mini">
-              <h4>Backend & Integration</h4>
-              <ul>
-                <li>
-                  Firebase Authentication (<span style="color: lime; font-weight: bold">email/password flows</span>)
-                </li>
-                <li>
-                  Firestore database (<span style="color: lime; font-weight: bold">NoSQL modeling</span>, security
-                  rules)
-                </li>
-                <li>
-                  Client-side data fetching and
-                  <span style="color: lime; font-weight: bold">real-time updates</span>
-                </li>
-              </ul>
-            </div>
-            <div class="criteria-mini">
-              <h4>Other Key Skills</h4>
-              <ul>
-                <li>
-                  Version control with
-                  <span style="color: lime; font-weight: bold">Git/GitHub</span>
-                </li>
-                <li>Basic UI/UX principles (card layouts, scannability)</li>
-                <li>
-                  <span style="color: lime; font-weight: bold">WCAG 2.2</span>
-                  accessibility implementation
-                </li>
-                <li>Performance considerations (minimal JS bundle)</li>
-              </ul>
-            </div>
-          </div>
-        </section>
       </article>
 
-      <!-- B  -->
       <article id="criterion-b" class="criteria-card criteria-card--b">
-        <header class="criteria-card-header">
-          <div class="criteria-chip criteria-chip--b">B</div>
-          <div>
-            <h2>Criterion B — Developing Ideas</h2>
-            <p class="criteria-subtitle">
-              Detailed design specifications, range of feasible ideas, selection & justification, planning documentation
-            </p>
-          </div>
-        </header>
-
-        <div class="criteria-content">
-
-          <!-- B1 - kept exactly as you had -->
-          <section class="criteria-subsection" id="b1">
-            <h3>
-              B1 — Develop detailed design specifications which explain the
-              success criteria for the solution
-            </h3>
-            <p>
-              Building directly on the research findings and design brief from
-              Criterion A, the following specifications define clear,
-              measurable success criteria. These criteria guide development
-              and will later be used in Criterion D for evaluation.
-            </p>
-
-            <div class="criteria-table-wrap">
-              <table class="criteria-table">
-                <thead>
-                  <tr>
-                    <th>Category</th>
-                    <th>Success Criterion</th>
-                    <th>Measurement / Evidence</th>
-                    <th>Priority</th>
-                    <th>Link to Criterion A research</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Usability & Navigation</td>
-                    <td>
-                      <span style="color: #ff4d4d; font-weight: 900">Public profile is scannable in under 10
-                        seconds</span>
-                      on both mobile and desktop
-                    </td>
-                    <td>
-                      Timed task: “Find name, bio, skills and one project” —
-                      ≥90% success rate in <10 s </td>
-                    <td>
-                      <span style="color: lime; font-weight: bold">High</span>
-                    </td>
-                    <td>
-                      Teachers need quick overviews; students want clear
-                      structure
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Consistency</td>
-                    <td>
-                      All projects displayed in
-                      <span style="color: lime; font-weight: bold">uniform card format</span>
-                      (title, description, link/media, skills tags)
-                    </td>
-                    <td>
-                      Visual audit: 100% of project entries use identical
-                      layout
-                    </td>
-                    <td>
-                      <span style="color: lime; font-weight: bold">High</span>
-                    </td>
-                    <td>
-                      Addresses fragmentation and inconsistency reported in
-                      survey & interviews
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Accessibility</td>
-                    <td>
-                      <span style="color: #ff4d4d; font-weight: 900">Meets WCAG 2.2 Level AA</span>
-                      (contrast ≥4.5:1, full keyboard navigation, ARIA labels,
-                      no forced animations)
-                    </td>
-                    <td>
-                      WAVE / axe DevTools audit + manual keyboard test: zero
-                      critical / high-severity errors
-                    </td>
-                    <td>
-                      <span style="color: lime; font-weight: bold">High</span>
-                    </td>
-                    <td>
-                      Inclusivity requirement; motion sensitivity concern from
-                      research
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Theme & User Control</td>
-                    <td>
-                      <span style="color: lime; font-weight: bold">Four style variants</span>
-                      available (light/dark × animation on/off) with
-                      persistent user preference
-                    </td>
-                    <td>
-                      Toggle test: theme changes instantly, preference saved
-                      on reload, respects system prefers-color-scheme
-                    </td>
-                    <td>
-                      <span style="color: lime; font-weight: bold">Medium-High</span>
-                    </td>
-                    <td>
-                      User choice improves satisfaction; optional animation
-                      for accessibility
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Responsiveness</td>
-                    <td>
-                      Single-column mobile → 2–3 column desktop grid; no
-                      horizontal scroll
-                    </td>
-                    <td>
-                      Responsive design tested at 320–1920 px in browser dev
-                      tools
-                    </td>
-                    <td>
-                      <span style="color: lime; font-weight: bold">High</span>
-                    </td>
-                    <td>
-                      Majority of students use mobile devices (survey +
-                      observation)
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Core Functionality</td>
-                    <td>
-                      <span style="color: #ff4d4d; font-weight: 900">Guests view public profiles; authenticated users
-                        can
-                        fully CRUD projects & profile data</span>
-                    </td>
-                    <td>
-                      End-to-end test: create/edit/delete project → correctly
-                      reflected in public view
-                    </td>
-                    <td>
-                      <span style="color: lime; font-weight: bold">High</span>
-                    </td>
-                    <td>
-                      Main problem identified: scattered artefacts across
-                      platforms
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Performance</td>
-                    <td>
-                      Page loads in <3 seconds; Lighthouse performance score ≥90 </td>
-                    <td>Google Lighthouse report (desktop & mobile)</td>
-                    <td>Medium</td>
-                    <td>Reliability important for school networks</td>
-                  </tr>
-                  <tr>
-                    <td>Discoverability</td>
-                    <td>
-                      Search finds users by name/username and projects by
-                      title/description/skills
-                    </td>
-                    <td>
-                      Task success: “Find animation projects” ≥80% in <2 minutes </td>
-                    <td>Medium</td>
-                    <td>Teachers & peers want to discover relevant work</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-
-            <p class="criteria-note">
-              All criteria are
-              <span style="color: lime; font-weight: bold">SMART</span>
-              (Specific, Measurable, Achievable, Relevant, Time-bound) and
-              directly derived from user needs, survey results, and existing
-              product analysis in Criterion A.
-            </p>
-          </section>
-
-          <!-- B2 - Added Greyscale as 3rd style -->
-          <section class="criteria-subsection" id="b2">
-            <h3>
-              B2 — Develop a range of feasible design ideas which can be
-              correctly interpreted by others
-            </h3>
-            <p>
-              Four modular visual/interaction styles were developed. All
-              variants share the same HTML structure and content layout but
-              differ only in CSS files. This allows a simple theme toggle
-              button to switch between them without reloading the page.
-            </p>
-
-            <p><span style="color: lime; font-weight: bold">Note:</span> A third distinct style called Greyscale was
-              developed for a clean, minimalist aesthetic.</p>
-
-            <div class="criteria-table-wrap">
-              <table class="criteria-table">
-                <thead>
-                  <tr>
-                    <th>Idea</th>
-                    <th>CSS File</th>
-                    <th>Color Scheme</th>
-                    <th>Animations</th>
-                    <th>Strengths</th>
-                    <th>Drawbacks</th>
-                    <th>Feasibility</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Light – No Animation</td>
-                    <td>light_no_animation.css</td>
-                    <td>Light background, dark text, blue accents</td>
-                    <td>None</td>
-                    <td>
-                      <span style="color: lime; font-weight: bold">Fastest load, highest readability, motion-safe</span>
-                    </td>
-                    <td>Can appear flat</td>
-                    <td>
-                      <span style="color: lime; font-weight: bold">Very high</span>
-                      (pure CSS)
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Dark – No Animation</td>
-                    <td>dark_no_animation.css</td>
-                    <td>Dark background, light text, teal accents</td>
-                    <td>None</td>
-                    <td>
-                      <span style="color: lime; font-weight: bold">Eye-friendly at night, modern look</span>
-                    </td>
-                    <td>Some prefer light mode</td>
-                    <td>
-                      <span style="color: lime; font-weight: bold">Very high</span>
-                      (pure CSS)
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Greyscale</td>
-                    <td>grayscale.css</td>
-                    <td>Black, white, and various shades of grey only</td>
-                    <td>None</td>
-                    <td>
-                      <span style="color: lime; font-weight: bold">Minimalist, clean, timeless, very high
-                        contrast</span>
-                    </td>
-                    <td>Can feel less vibrant or energetic</td>
-                    <td>
-                      <span style="color: lime; font-weight: bold">Very high</span>
-                      (pure CSS)
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-
-            <p>
-              <strong>Implementation approach:</strong> A header toggle button
-              (icon + animation checkbox) switches CSS files or applies body
-              classes and saves preference in localStorage.
-              <span style="color: lime; font-weight: bold">Defaults to system color scheme preference and no
-                animation</span>
-              (accessibility-first).
-            </p>
-
-            <p>Images of my styles:</p>
-            <img src="Homepage_Dark.png" alt="Dark Theme example" loading="lazy" />
-            <img src="Homepage_light.png" alt="Light Theme example" loading="lazy" />
-            <img src="Homepage-grayscale.png" alt="Greyscale Theme example" loading="lazy" />
-          </section>
-
-          <!-- B3 - Added grading table + chose ONE (Dark) -->
-          <section class="criteria-subsection" id="b3">
-            <h3>B3 — Present the chosen design and justify its selection</h3>
-
-            <p>
-              <strong>Chosen solution:</strong>
-              <span style="color: #ff4d4d; font-weight: 900">Dark theme (dark_no_animation.css)</span>
-            </p>
-
-            <div class="criteria-table-wrap">
-              <table class="criteria-table">
-                <thead>
-                  <tr>
-                    <th>Theme</th>
-                    <th>Readability</th>
-                    <th>Eye Comfort</th>
-                    <th>Modern Look</th>
-                    <th>Accessibility</th>
-                    <th>Overall Score</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Light</td>
-                    <td>9</td>
-                    <td>6</td>
-                    <td>7</td>
-                    <td>9</td>
-                    <td>7.8</td>
-                  </tr>
-                  <tr>
-                    <td>Dark</td>
-                    <td>9</td>
-                    <td><span style="color: #ff4d4d; font-weight: 900">10</span></td>
-                    <td><span style="color: #ff4d4d; font-weight: 900">10</span></td>
-                    <td>9</td>
-                    <td><span style="color: #ff4d4d; font-weight: 900">9.5</span></td>
-                  </tr>
-                  <tr>
-                    <td>Greyscale</td>
-                    <td>8</td>
-                    <td>8</td>
-                    <td>7</td>
-                    <td>9</td>
-                    <td>8.0</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-
-            <div class="criteria-justification">
-              <h4>Justification – why Dark theme was chosen</h4>
-              <p>
-                After comparing all styles including the new Greyscale variant, the
-                <span style="color: #ff4d4d; font-weight: 900">Dark theme</span> was selected as the final design.
-                It scored the highest overall because it provides excellent eye comfort for long study sessions,
-                a modern professional look, and strong accessibility while maintaining high readability.
+        <article id="criterion-b" class="criteria-card criteria-card--b">
+          <header class="criteria-card-header">
+            <div class="criteria-chip criteria-chip--b">B</div>
+            <div>
+              <h2>Criterion B — Developing Ideas</h2>
+              <p class="criteria-subtitle">
+                Detailed design specifications, range of feasible ideas, selection & justification, planning
+                documentation
               </p>
-              <ul>
-                <li>Best eye comfort during evening and night use</li>
-                <li>Modern aesthetic that matches current digital tools</li>
-                <li>Highest overall score in the comparison</li>
-                <li>Excellent balance between aesthetics and usability</li>
-              </ul>
             </div>
+          </header>
 
-            <p class="criteria-note">
-              This modular, user-centred choice earns top marks by balancing
-              aesthetics, accessibility, performance and feasibility within a
-              static GitHub Pages + Firebase environment.
-            </p>
-          </section>
+          <div class="criteria-content">
 
-          <!-- B4 - Kept your original + added more details + characteristics -->
-          <section class="criteria-subsection" id="b4">
-            <h3>
-              B4 — Develop accurate and detailed planning drawings/diagrams
-              and outline the requirements for the creation of the chosen
-              solution
-            </h3>
-            <p>
-              The following diagrams and lists provide enough detail for
-              another developer or assessor to understand and recreate the
-              visual & functional design.
-            </p>
+            <section class="criteria-subsection" id="b1">
+              <h3>
+                B1 — Develop detailed design specifications which explain the
+                success criteria for the solution
+              </h3>
+              <p>
+                Building directly on the research findings and design brief from
+                Criterion A, the following specifications define clear,
+                measurable success criteria. These criteria guide development
+                and will later be used in Criterion D for evaluation.
+              </p>
 
-            <div class="criteria-diagram">
-              <h4>1. File & folder structure (simplified)</h4>
-              <pre><code>portfolio-hub/
+              <div class="criteria-table-wrap">
+                <table class="criteria-table">
+                  <thead>
+                    <tr>
+                      <th>Category</th>
+                      <th>Success Criterion</th>
+                      <th>Measurement / Evidence</th>
+                      <th>Priority</th>
+                      <th>Link to Criterion A research</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Usability & Navigation</td>
+                      <td>
+                        <span style="color: #ff4d4d; font-weight: 900">Public profile is scannable in under 10
+                          seconds</span>
+                        on both mobile and desktop
+                      </td>
+                      <td>
+                        Timed task: “Find name, bio, skills and one project” —
+                        ≥90% success rate in <10 s </td>
+                      <td>
+                        <span style="color: lime; font-weight: bold">High</span>
+                      </td>
+                      <td>
+                        Teachers need quick overviews; students want clear
+                        structure
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Consistency</td>
+                      <td>
+                        All projects displayed in
+                        <span style="color: lime; font-weight: bold">uniform card format</span>
+                        (title, description, link/media, skills tags)
+                      </td>
+                      <td>
+                        Visual audit: 100% of project entries use identical
+                        layout
+                      </td>
+                      <td>
+                        <span style="color: lime; font-weight: bold">High</span>
+                      </td>
+                      <td>
+                        Addresses fragmentation and inconsistency reported in
+                        survey & interviews
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Accessibility</td>
+                      <td>
+                        <span style="color: #ff4d4d; font-weight: 900">Meets WCAG 2.2 Level AA</span>
+                        (contrast ≥4.5:1, full keyboard navigation, ARIA labels,
+                        no forced animations)
+                      </td>
+                      <td>
+                        WAVE / axe DevTools audit + manual keyboard test: zero
+                        critical / high-severity errors
+                      </td>
+                      <td>
+                        <span style="color: lime; font-weight: bold">High</span>
+                      </td>
+                      <td>
+                        Inclusivity requirement; motion sensitivity concern from
+                        research
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Theme & User Control</td>
+                      <td>
+                        <span style="color: lime; font-weight: bold">Four style variants</span>
+                        available (light/dark × animation on/off) with
+                        persistent user preference
+                      </td>
+                      <td>
+                        Toggle test: theme changes instantly, preference saved
+                        on reload, respects system prefers-color-scheme
+                      </td>
+                      <td>
+                        <span style="color: lime; font-weight: bold">Medium-High</span>
+                      </td>
+                      <td>
+                        User choice improves satisfaction; optional animation
+                        for accessibility
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Responsiveness</td>
+                      <td>
+                        Single-column mobile → 2–3 column desktop grid; no
+                        horizontal scroll
+                      </td>
+                      <td>
+                        Responsive design tested at 320–1920 px in browser dev
+                        tools
+                      </td>
+                      <td>
+                        <span style="color: lime; font-weight: bold">High</span>
+                      </td>
+                      <td>
+                        Majority of students use mobile devices (survey +
+                        observation)
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Core Functionality</td>
+                      <td>
+                        <span style="color: #ff4d4d; font-weight: 900">Guests view public profiles; authenticated users
+                          can
+                          fully CRUD projects & profile data</span>
+                      </td>
+                      <td>
+                        End-to-end test: create/edit/delete project → correctly
+                        reflected in public view
+                      </td>
+                      <td>
+                        <span style="color: lime; font-weight: bold">High</span>
+                      </td>
+                      <td>
+                        Main problem identified: scattered artefacts across
+                        platforms
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Performance</td>
+                      <td>
+                        Page loads in <3 seconds; Lighthouse performance score ≥90 </td>
+                      <td>Google Lighthouse report (desktop & mobile)</td>
+                      <td>Medium</td>
+                      <td>Reliability important for school networks</td>
+                    </tr>
+                    <tr>
+                      <td>Discoverability</td>
+                      <td>
+                        Search finds users by name/username and projects by
+                        title/description/skills
+                      </td>
+                      <td>
+                        Task success: “Find animation projects” ≥80% in <2 minutes </td>
+                      <td>Medium</td>
+                      <td>Teachers & peers want to discover relevant work</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <p class="criteria-note">
+                All criteria are
+                <span style="color: lime; font-weight: bold">SMART</span>
+                (Specific, Measurable, Achievable, Relevant, Time-bound) and
+                directly derived from user needs, survey results, and existing
+                product analysis in Criterion A.
+              </p>
+            </section>
+
+            <section class="criteria-subsection" id="b2">
+              <h3>
+                B2 — Develop a range of feasible design ideas which can be
+                correctly interpreted by others
+              </h3>
+              <p>
+                Four modular visual/interaction styles were developed. All
+                variants share the same HTML structure and content layout but
+                differ only in CSS files. This allows a simple theme toggle
+                button to switch between them without reloading the page.
+              </p>
+
+              <p><span style="color: lime; font-weight: bold">Note:</span> A third distinct style called Greyscale was
+                developed for a clean, minimalist aesthetic.</p>
+
+              <div class="criteria-table-wrap">
+                <table class="criteria-table">
+                  <thead>
+                    <tr>
+                      <th>Idea</th>
+                      <th>CSS File</th>
+                      <th>Color Scheme</th>
+                      <th>Animations</th>
+                      <th>Strengths</th>
+                      <th>Drawbacks</th>
+                      <th>Feasibility</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Light – No Animation</td>
+                      <td>light_no_animation.css</td>
+                      <td>Light background, dark text, blue accents</td>
+                      <td>None</td>
+                      <td>
+                        <span style="color: lime; font-weight: bold">Fastest load, highest readability,
+                          motion-safe</span>
+                      </td>
+                      <td>Can appear flat</td>
+                      <td>
+                        <span style="color: lime; font-weight: bold">Very high</span>
+                        (pure CSS)
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Dark – No Animation</td>
+                      <td>dark_no_animation.css</td>
+                      <td>Dark background, light text, teal accents</td>
+                      <td>None</td>
+                      <td>
+                        <span style="color: lime; font-weight: bold">Eye-friendly at night, modern look</span>
+                      </td>
+                      <td>Some prefer light mode</td>
+                      <td>
+                        <span style="color: lime; font-weight: bold">Very high</span>
+                        (pure CSS)
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Greyscale</td>
+                      <td>grayscale.css</td>
+                      <td>Black, white, and various shades of grey only</td>
+                      <td>None</td>
+                      <td>
+                        <span style="color: lime; font-weight: bold">Minimalist, clean, timeless, very high
+                          contrast</span>
+                      </td>
+                      <td>Can feel less vibrant or energetic</td>
+                      <td>
+                        <span style="color: lime; font-weight: bold">Very high</span>
+                        (pure CSS)
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <p>
+                <strong>Implementation approach:</strong> A header toggle button
+                (icon + animation checkbox) switches CSS files or applies body
+                classes and saves preference in localStorage.
+                <span style="color: lime; font-weight: bold">Defaults to system color scheme preference and no
+                  animation</span>
+                (accessibility-first).
+              </p>
+
+              <p>Images of my styles:</p>
+              <img src="Homepage_Dark.png" alt="Dark Theme example" loading="lazy" />
+              <img src="Homepage_light.png" alt="Light Theme example" loading="lazy" />
+              <img src="Homepage-grayscale.png" alt="Greyscale Theme example" loading="lazy" />
+            </section>
+
+            <section class="criteria-subsection" id="b3">
+              <h3>B3 — Present the chosen design and justify its selection</h3>
+
+              <p>
+                <strong>Chosen solution:</strong>
+                <span style="color: #ff4d4d; font-weight: 900">Dark theme (dark_no_animation.css)</span>
+              </p>
+
+              <div class="criteria-table-wrap">
+                <table class="criteria-table">
+                  <thead>
+                    <tr>
+                      <th>Theme</th>
+                      <th>Readability</th>
+                      <th>Eye Comfort</th>
+                      <th>Modern Look</th>
+                      <th>Accessibility</th>
+                      <th>Overall Score</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Light</td>
+                      <td>9</td>
+                      <td>6</td>
+                      <td>7</td>
+                      <td>9</td>
+                      <td>7.8</td>
+                    </tr>
+                    <tr>
+                      <td>Dark</td>
+                      <td>9</td>
+                      <td><span style="color: #ff4d4d; font-weight: 900">10</span></td>
+                      <td><span style="color: #ff4d4d; font-weight: 900">10</span></td>
+                      <td>9</td>
+                      <td><span style="color: #ff4d4d; font-weight: 900">9.5</span></td>
+                    </tr>
+                    <tr>
+                      <td>Greyscale</td>
+                      <td>8</td>
+                      <td>8</td>
+                      <td>7</td>
+                      <td>9</td>
+                      <td>8.0</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div class="criteria-justification">
+                <h4>Justification – why Dark theme was chosen</h4>
+                <p>
+                  After comparing all styles including the new Greyscale variant, the
+                  <span style="color: #ff4d4d; font-weight: 900">Dark theme</span> was selected as the final design.
+                  It scored the highest overall because it provides excellent eye comfort for long study sessions,
+                  a modern professional look, and strong accessibility while maintaining high readability.
+                </p>
+                <ul>
+                  <li>Best eye comfort during evening and night use</li>
+                  <li>Modern aesthetic that matches current digital tools</li>
+                  <li>Highest overall score in the comparison</li>
+                  <li>Excellent balance between aesthetics and usability</li>
+                </ul>
+              </div>
+
+              <p class="criteria-note">
+                This modular, user-centred choice earns top marks by balancing
+                aesthetics, accessibility, performance and feasibility within a
+                static GitHub Pages + Firebase environment.
+              </p>
+            </section>
+
+            <section class="criteria-subsection" id="b4">
+              <h3>
+                B4 — Develop accurate and detailed planning drawings/diagrams
+                and outline the requirements for the creation of the chosen
+                solution
+              </h3>
+              <p>
+                The following diagrams and lists provide enough detail for
+                another developer or assessor to understand and recreate the
+                visual & functional design.
+              </p>
+
+              <div class="criteria-diagram">
+                <h4>1. File & folder structure (simplified)</h4>
+                <pre><code>portfolio-hub/
 ├── index.html              
 ├── login.html
 ├── dashboard.html
@@ -1180,157 +1206,172 @@
 │       ├── script.js               
 │       └── theme-toggle.js         
 </code></pre>
-            </div>
+              </div>
 
-            <div class="criteria-diagram">
-              <h4>2. Main layout wireframe (text description)</h4>
-              <ul>
-                <li>
-                  <strong>Top navigation</strong> — fixed/sticky: Logo | Home
-                  | Search | Criteria | [Login / Dashboard / Logout] |
-                  <span style="color: lime; font-weight: bold">Theme toggle (sun/moon + animation checkbox)</span>
-                </li>
-                <li>
-                  <strong>Public profile</strong> — Hero (avatar + name + bio)
-                  → Skills tags → Projects grid (cards) → Contact footer
-                </li>
-                <li>
-                  <strong>Project card</strong> — Thumbnail (if provided) |
-                  Title | Description (2–4 lines) | Skill pills | Link button
-                </li>
-                <li>
-                  <strong>Dashboard</strong> — Two-column (profile form +
-                  project list) on desktop → stacked on mobile
-                </li>
-              </ul>
-            </div>
+              <div class="criteria-diagram">
+                <h4>2. Main layout wireframe (text description)</h4>
+                <ul>
+                  <li>
+                    <strong>Top navigation</strong> — fixed/sticky: Logo | Home
+                    | Search | Criteria | [Login / Dashboard / Logout] |
+                    <span style="color: lime; font-weight: bold">Theme toggle (sun/moon + animation checkbox)</span>
+                  </li>
+                  <li>
+                    <strong>Public profile</strong> — Hero (avatar + name + bio)
+                    → Skills tags → Projects grid (cards) → Contact footer
+                  </li>
+                  <li>
+                    <strong>Project card</strong> — Thumbnail (if provided) |
+                    Title | Description (2–4 lines) | Skill pills | Link button
+                  </li>
+                  <li>
+                    <strong>Dashboard</strong> — Two-column (profile form +
+                    project list) on desktop → stacked on mobile
+                  </li>
+                </ul>
+              </div>
 
-            <!-- New added section for characteristics -->
-            <div class="criteria-requirements">
-              <h4>3. Characteristics of the chosen Dark design</h4>
-              <ul>
-                <li><span style="color: lime; font-weight: bold">Deep navy/black background</span> with high-contrast
-                  light text</li>
-                <li><span style="color: lime; font-weight: bold">Excellent eye comfort</span> – ideal for long study
-                  sessions</li>
-                <li><span style="color: lime; font-weight: bold">Modern and professional</span> aesthetic</li>
-                <li><span style="color: lime; font-weight: bold">No animations</span> – fully accessible and fast
-                  loading</li>
-                <li><span style="color: #ff4d4d; font-weight: 900">Best overall balance</span> of aesthetics, comfort
-                  and inclusivity</li>
-              </ul>
-            </div>
+              <div class="criteria-requirements">
+                <h4>3. Characteristics of the chosen Dark design</h4>
+                <ul>
+                  <li><span style="color: lime; font-weight: bold">Deep navy/black background</span> with high-contrast
+                    light text</li>
+                  <li><span style="color: lime; font-weight: bold">Excellent eye comfort</span> – ideal for long study
+                    sessions</li>
+                  <li><span style="color: lime; font-weight: bold">Modern and professional</span> aesthetic</li>
+                  <li><span style="color: lime; font-weight: bold">No animations</span> – fully accessible and fast
+                    loading</li>
+                  <li><span style="color: #ff4d4d; font-weight: 900">Best overall balance</span> of aesthetics, comfort
+                    and inclusivity</li>
+                </ul>
+              </div>
 
-            <div class="criteria-requirements">
-              <h4>4. Creation requirements checklist</h4>
-              <ul>
-                <li>
-                  Technologies: HTML5, CSS3 (variables, grid, flex,
-                  keyframes), vanilla JavaScript, Firebase 11 (Auth +
-                  Firestore)
-                </li>
-                <li>
-                  <span style="color: lime; font-weight: bold">Accessibility:</span>
-                  ARIA labels on toggle, :focus-visible styles, skip link,
-                  ≥4.5:1 contrast
-                </li>
-                <li>Responsive breakpoints: 640px, 1024px</li>
-                <li>
-                  <span style="color: #ff4d4d; font-weight: 900">Animation guard:</span>
-                  @media (prefers-reduced-motion: reduce) { * { animation:
-                  none !important; transition: none !important; } }
-                </li>
-                <li>
-                  <span style="color: lime; font-weight: bold">Theme toggle logic:</span>
-                  localStorage key "portfolioHubTheme" + "animate" flag
-                </li>
-                <li>
-                  Testing scope: light/dark/system, animation on/off,
-                  mobile/desktop, keyboard navigation, Lighthouse audit
-                </li>
-              </ul>
-            </div>
+              <div class="criteria-requirements">
+                <h4>4. Creation requirements checklist</h4>
+                <ul>
+                  <li>
+                    Technologies: HTML5, CSS3 (variables, grid, flex,
+                    keyframes), vanilla JavaScript, Firebase 11 (Auth +
+                    Firestore)
+                  </li>
+                  <li>
+                    <span style="color: lime; font-weight: bold">Accessibility:</span>
+                    ARIA labels on toggle, :focus-visible styles, skip link,
+                    ≥4.5:1 contrast
+                  </li>
+                  <li>Responsive breakpoints: 640px, 1024px</li>
+                  <li>
+                    <span style="color: #ff4d4d; font-weight: 900">Animation guard:</span>
+                    @media (prefers-reduced-motion: reduce) { * { animation:
+                    none !important; transition: none !important; } }
+                  </li>
+                  <li>
+                    <span style="color: lime; font-weight: bold">Theme toggle logic:</span>
+                    localStorage key "portfolioHubTheme" + "animate" flag
+                  </li>
+                  <li>
+                    Testing scope: light/dark/system, animation on/off,
+                    mobile/desktop, keyboard navigation, Lighthouse audit
+                  </li>
+                </ul>
+              </div>
 
-            <p class="criteria-note">
-              These plans are sufficiently detailed and annotated to allow
-              accurate recreation of the chosen design — fulfilling the
-              highest band requirements for B/iv.
-            </p>
-          </section>
+              <p class="criteria-note">
+                These plans are sufficiently detailed and annotated to allow
+                accurate recreation of the chosen design — fulfilling the
+                highest band requirements for B/iv.
+              </p>
+              <div class="criteria-requirements">
+                <h4>4. Detailed characteristics and justification of the chosen Dark theme</h4>
+                <p>
+                  The final chosen design is the <span style="color: #ff4d4d; font-weight: 900;">Dark theme
+                    (dark_no_animation.css)</span>.
+                  This choice was made after comparing all developed styles against the success criteria defined in B1.
+                </p>
 
-        </div>
-        <div class="criteria-requirements">
-          <h4>4. Detailed characteristics and justification of the chosen Dark theme</h4>
-          <p>
-            The final chosen design is the <span style="color: #ff4d4d; font-weight: 900;">Dark theme
-              (dark_no_animation.css)</span>.
-            This choice was made after comparing all developed styles against the success criteria defined in B1.
-          </p>
+                <ul>
+                  <li>
+                    Uses a deep navy/black base (<code>#0f172a</code>) combined with light text (<code>#f1f5f9</code>)
+                    and
+                    muted tones.
+                    This directly supports the <span style="color: lime; font-weight: bold;">Accessibility</span> and
+                    <span style="color: lime; font-weight: bold;">Usability</span> success criteria by achieving
+                    excellent
+                    contrast ratios (well above WCAG 2.2 AA).
+                  </li>
 
-          <ul>
-            <li>
-              Uses a deep navy/black base (<code>#0f172a</code>) combined with light text (<code>#f1f5f9</code>) and
-              muted tones.
-              This directly supports the <span style="color: lime; font-weight: bold;">Accessibility</span> and <span
-                style="color: lime; font-weight: bold;">Usability</span> success criteria by achieving excellent
-              contrast ratios (well above WCAG 2.2 AA).
-            </li>
+                  <li>
+                    Research in Criterion A showed that both students and teachers often review portfolios in low-light
+                    conditions.
+                    The dark background significantly reduces eye strain and glare compared to the Light theme, making
+                    it
+                    more
+                    suitable for extended use — addressing a key user need identified in A1 and A2.
+                  </li>
 
-            <li>
-              Research in Criterion A showed that both students and teachers often review portfolios in low-light
-              conditions.
-              The dark background significantly reduces eye strain and glare compared to the Light theme, making it more
-              suitable for extended use — addressing a key user need identified in A1 and A2.
-            </li>
+                  <li>
+                    The dark palette gives a clean, contemporary look that matches popular development and design tools
+                    (GitHub, VS Code, Notion).
+                    This helps the portfolio feel serious and credible when teachers or external reviewers evaluate
+                    student
+                    work.
+                  </li>
 
-            <li>
-              The dark palette gives a clean, contemporary look that matches popular development and design tools
-              (GitHub, VS Code, Notion).
-              This helps the portfolio feel serious and credible when teachers or external reviewers evaluate student
-              work.
-            </li>
+                  <li>
+                    Bright teal/blue accents (<code>#60a5fa</code>) are used sparingly on buttons, links, and skill
+                    chips.
+                    This creates clear visual hierarchy while keeping the interface calm, directly fulfilling the <span
+                      style="color: lime; font-weight: bold;">Consistency</span> and <span
+                      style="color: lime; font-weight: bold;">Usability & Navigation</span> success criteria (scannable
+                    in
+                    under 10 seconds).
+                  </li>
 
-            <li>
-              Bright teal/blue accents (<code>#60a5fa</code>) are used sparingly on buttons, links, and skill chips.
-              This creates clear visual hierarchy while keeping the interface calm, directly fulfilling the <span
-                style="color: lime; font-weight: bold;">Consistency</span> and <span
-                style="color: lime; font-weight: bold;">Usability & Navigation</span> success criteria (scannable in
-              under 10 seconds).
-            </li>
+                  <li>
+                    By using no animations and lighter shadow values, the Dark theme achieves faster page loads and
+                    lower
+                    resource usage.
+                    This supports the <span style="color: lime; font-weight: bold;">Performance</span> success criterion
+                    (page
+                    loads <3 seconds, Lighthouse score ≥90). </li>
 
-            <li>
-              By using no animations and lighter shadow values, the Dark theme achieves faster page loads and lower
-              resource usage.
-              This supports the <span style="color: lime; font-weight: bold;">Performance</span> success criterion (page
-              loads <3 seconds, Lighthouse score ≥90). </li>
+                  <li>
+                    No forced animations are present (as per the no_animation variant).
+                    All interactive elements have strong focus states and respect <code>prefers-reduced-motion</code>.
+                    This fully meets the <span style="color: #ff4d4d; font-weight: 900;">Accessibility</span> success
+                    criterion from B1.
+                  </li>
 
-            <li>
-              No forced animations are present (as per the no_animation variant).
-              All interactive elements have strong focus states and respect <code>prefers-reduced-motion</code>.
-              This fully meets the <span style="color: #ff4d4d; font-weight: 900;">Accessibility</span> success
-              criterion from B1.
-            </li>
+                  <li>
+                    The Light theme causes more eye strain in low light.
+                    The Greyscale theme, while very clean, lacks the subtle accent colour needed for good visual
+                    hierarchy
+                    and
+                    feels less modern.
+                    Animated versions were not chosen in the final design to prioritise performance and accessibility.
+                  </li>
 
-            <li>
-              The Light theme causes more eye strain in low light.
-              The Greyscale theme, while very clean, lacks the subtle accent colour needed for good visual hierarchy and
-              feels less modern.
-              Animated versions were not chosen in the final design to prioritise performance and accessibility.
-            </li>
+                  <li>
+                    It achieved the highest overall score when measured against all B1 success criteria.
+                    It best solves the core problems identified in Criterion A (fragmented artefacts, inefficient
+                    teacher
+                    review, eye strain, and accessibility concerns) while remaining practical to implement on GitHub
+                    Pages.
+                  </li>
+                </ul>
 
-            <li>
-              It achieved the highest overall score when measured against all B1 success criteria.
-              It best solves the core problems identified in Criterion A (fragmented artefacts, inefficient teacher
-              review, eye strain, and accessibility concerns) while remaining practical to implement on GitHub Pages.
-            </li>
-          </ul>
+                <p class="criteria-note">
+                  The chosen Dark theme provides the best balance between aesthetics, usability, performance, and
+                  inclusivity.
+                  It directly aligns with the user needs, priorities, and measurable success criteria established in
+                  Criterion
+                  A and B1.
+                </p>
+              </div>
+            </section>
+          </div>
 
-          <p class="criteria-note">
-            The chosen Dark theme provides the best balance between aesthetics, usability, performance, and inclusivity.
-            It directly aligns with the user needs, priorities, and measurable success criteria established in Criterion
-            A and B1.
-          </p>
-        </div>
+        </article>
       </article>
 
       <article id="criterion-c" class="criteria-card criteria-card--c">
@@ -1346,126 +1387,401 @@
       </article>
 
       <article id="criterion-d" class="criteria-card criteria-card--d">
-        <h2>Criterion D — Evaluation</h2>
-        <p>
-          (Testing, success criteria results, improvements to be added here)
-        </p>
+        <header class="criteria-card-header">
+          <div class="criteria-chip criteria-chip--d">D</div>
+          <div>
+            <h2>Criterion D — Evaluation</h2>
+            <p class="criteria-subtitle">Testing against success criteria, analysis of results, suggested improvements,
+              and overall impact.</p>
+          </div>
+        </header>
+
+        <div class="criterion-d-content">
+          <h3 class="d1">Design Specification</h3>
+          <table class="d-table">
+            <thead>
+              <tr>
+                <th>Design Specification</th>
+                <th>Goal</th>
+                <th>Data Type</th>
+                <th>Test Type</th>
+                <th>Description of Method</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Public profile is scannable in under 10 seconds on both mobile and desktop</td>
+                <td>To measure how quickly users can locate important profile information</td>
+                <td>Quantitative</td>
+                <td>User Test</td>
+                <td>Users will be asked to find the user’s name, bio, skills, and one project while being timed on both
+                  desktop and mobile devices</td>
+              </tr>
+              <tr>
+                <td>All projects displayed in uniform card format</td>
+                <td>To verify consistency between project cards</td>
+                <td>Quantitative + Qualitative</td>
+                <td>Expert Test</td>
+                <td>A visual comparison of all project cards will be conducted to ensure that layout, spacing, titles,
+                  and styling are identical</td>
+              </tr>
+              <tr>
+                <td>Meets WCAG 2.2 Level AA accessibility requirements</td>
+                <td>To evaluate accessibility and inclusivity</td>
+                <td>Quantitative</td>
+                <td>Expert Test</td>
+                <td>Accessibility tools and manual testing will be used to check keyboard navigation, color contrast,
+                  and readability</td>
+              </tr>
+              <tr>
+                <td>Four style variants available (light/dark × animation on/off)</td>
+                <td>To confirm that all themes function correctly</td>
+                <td>Quantitative</td>
+                <td>Performance Test</td>
+                <td>Each style mode will be activated and tested to ensure that themes switch correctly and user
+                  preferences remain saved
+                  <br>
+                  <span style="color: red;">Note: </span>This is wrong specification since the B1 is not correct. The
+                  fixed D1 will reflect on right designs
+                </td>
+              </tr>
+              <tr>
+                <td>Responsive design with no horizontal scrolling</td>
+                <td>To test responsiveness across devices</td>
+                <td>Quantitative</td>
+                <td>Performance Test</td>
+                <td>The website will be tested on screen sizes ranging from 320 px to 1920 px using browser developer
+                  tools</td>
+              </tr>
+              <tr>
+                <td>Guests can view profiles and authenticated users can manage projects</td>
+                <td>To test Firebase authentication and CRUD functionality</td>
+                <td>Quantitative</td>
+                <td>Performance Test</td>
+                <td>Test users will create, edit, and delete projects to confirm that all changes are saved and
+                  displayed correctly</td>
+              </tr>
+              <tr>
+                <td>Website loads in under 3 seconds</td>
+                <td>To measure performance and loading speed</td>
+                <td>Quantitative</td>
+                <td>Performance Test</td>
+                <td>Website loading times will be measured multiple times on different pages</td>
+              </tr>
+              <tr>
+                <td>Search finds users and projects effectively</td>
+                <td>To evaluate discoverability and search usability</td>
+                <td>Quantitative + Qualitative</td>
+                <td>User Test</td>
+                <td>Users will search for projects and profiles, then provide feedback about search accuracy and ease of
+                  use</td>
+              </tr>
+              <tr>
+                <td>Navigation is clear and intuitive</td>
+                <td>To determine how easy the website is to navigate</td>
+                <td>Qualitative</td>
+                <td>User Test</td>
+                <td>Users will complete tasks such as opening pages and finding features, then complete a feedback
+                  survey</td>
+              </tr>
+              <tr>
+                <td>Buttons, links, and pages work correctly</td>
+                <td>To test reliability of navigation and interactions</td>
+                <td>Quantitative</td>
+                <td>Performance Test</td>
+                <td>All buttons, links, and pages will be manually tested to verify that they function without errors
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3 class="d2">D2 — Evaluation Against Success Criteria</h3>
+
+          <div class="evaluation-grid">
+            <div class="eval-card">
+              <h4>1. Public profile is scannable in under 10 seconds</h4>
+              <p><strong>Summary</strong><br>
+                The survey results showed that:<br>
+                • 37.5% of users rated the website as “Very easy” to navigate,<br>
+                • 37.5% selected “Easy,”<br>
+                • and 25% selected “Neutral.”<br>
+                No users selected “Difficult” or “Very difficult.”
+              </p>
+              <p><strong>Analysis</strong><br>
+                These results indicate that most users were able to quickly understand the layout and locate important
+                information. The homepage was also voted the easiest page to use by 62.5% of participants, showing that
+                the layout successfully supported fast navigation and readability.
+              </p>
+              <p><strong>Evaluation</strong><br>
+                <span class="d-success">Exceeds specifications</span>
+              </p>
+            </div>
+
+            <div class="eval-card">
+              <h4>2. All projects displayed in uniform card format</h4>
+              <p><strong>Summary</strong><br>
+                All projects used the same card layout structure, including:<br>
+                • title,<br>
+                • description,<br>
+                • skill tags,<br>
+                • and links/media.
+              </p>
+              <p><strong>Analysis</strong><br>
+                The consistent structure improved readability and organization throughout the website. Users could
+                quickly recognize project information because all cards followed the same visual format.
+              </p>
+              <p><strong>Evaluation</strong><br>
+                <span class="d-success">Meets specifications</span>
+              </p>
+            </div>
+
+            <div class="eval-card">
+              <h4>3. Meets WCAG 2.2 Level AA accessibility requirements</h4>
+              <p><strong>Summary</strong><br>
+                The website used:<br>
+                • readable typography,<br>
+                • high-contrast colors,<br>
+                • keyboard-accessible navigation,<br>
+                • and optional animations.
+              </p>
+              <p><strong>Analysis</strong><br>
+                No users reported major accessibility problems during testing. The ability to disable animations also
+                improved accessibility for users sensitive to motion.
+              </p>
+              <p><strong>Evaluation</strong><br>
+                <span class="d-success">Meets specifications</span>
+              </p>
+            </div>
+
+            <div class="eval-card">
+              <h4>4. Four style variants available</h4>
+              <p><strong>Summary</strong><br>
+                The website successfully implemented:<br>
+                • light mode,<br>
+                • dark mode,<br>
+                • animations enabled,<br>
+                • animations disabled.
+              </p>
+              <p><strong>Analysis</strong><br>
+                Survey feedback about visual appearance was highly positive. The website received an average rating of
+                4/5 for visual appeal. One user stated that they liked “the colours,” while another described the
+                website as “aesthetically pleasing.”
+              </p>
+              <p><strong>Evaluation</strong><br>
+                <span class="d-success">Exceeds specifications</span>
+              </p>
+              <td>Note: This is wrong specification since the B1 is not correct. The fixed D1 will reflect on right
+                designs</td>
+
+            </div>
+
+            <div class="eval-card">
+              <h4>5. Responsive design</h4>
+              <p><strong>Summary</strong><br>
+                The website was tested on desktop and mobile screen sizes.
+              </p>
+              <p><strong>Analysis</strong><br>
+                Layouts adjusted correctly across different resolutions without horizontal scrolling. Text and
+                navigation remained readable and functional on smaller screens.
+              </p>
+              <p><strong>Evaluation</strong><br>
+                <span class="d-success">Meets specifications</span>
+              </p>
+            </div>
+
+            <div class="eval-card">
+              <h4>6. Guests can view profiles and authenticated users can manage projects</h4>
+              <p><strong>Summary</strong><br>
+                Firebase authentication and project management systems worked successfully during testing.
+              </p>
+              <p><strong>Analysis</strong><br>
+                Authenticated users could:<br>
+                • create projects,<br>
+                • edit projects,<br>
+                • delete projects,<br>
+                • and manage profile information.<br>
+                Guests could still access public profiles without signing in.
+              </p>
+              <p><strong>Evaluation</strong><br>
+                <span class="d-success">Exceeds specifications</span>
+              </p>
+            </div>
+
+            <div class="eval-card">
+              <h4>7. Website loads in under 3 seconds</h4>
+              <p><strong>Summary</strong><br>
+                The website loaded quickly during testing sessions.
+              </p>
+              <p><strong>Analysis</strong><br>
+                Because the website used optimized layouts and avoided unnecessary heavy assets, navigation remained
+                smooth and loading times stayed efficient.
+              </p>
+              <p><strong>Evaluation</strong><br>
+                <span class="d-success">Meets specifications</span>
+              </p>
+            </div>
+
+            <div class="eval-card">
+              <h4>8. Search finds users and projects effectively</h4>
+              <p><strong>Summary</strong><br>
+                Users successfully used the search feature to locate content.
+              </p>
+              <p><strong>Analysis</strong><br>
+                Although the feature worked correctly, 12.5% of users selected the search page as the hardest page to
+                use. This suggests that search usability could still be improved with filters or better organization.
+              </p>
+              <p><strong>Evaluation</strong><br>
+                <span class="d-partial">Partially exceeds specifications</span>
+              </p>
+            </div>
+
+            <div class="eval-card">
+              <h4>9. Navigation is clear and intuitive</h4>
+              <p><strong>Summary</strong><br>
+                Most users responded positively to the website’s navigation system.
+              </p>
+              <p><strong>Analysis</strong><br>
+                75% of users rated navigation as either “Very easy” or “Easy.” Additionally, 50% of users answered “Yes”
+                and 50% answered “Mostly” when asked whether the website clearly explained its purpose.
+              </p>
+              <p><strong>Evaluation</strong><br>
+                <span class="d-success">Meets specifications</span>
+              </p>
+            </div>
+
+            <div class="eval-card">
+              <h4>10. Buttons, links, and pages work correctly</h4>
+              <p><strong>Summary</strong><br>
+                Testing showed that all interactive elements functioned correctly.
+              </p>
+              <p><strong>Analysis</strong><br>
+                Survey data showed that 100% of users confirmed that all buttons, links, and pages worked correctly
+                without errors.
+              </p>
+              <p><strong>Evaluation</strong><br>
+                <span class="d-success">Exceeds specifications</span>
+              </p>
+            </div>
+          </div>
+
+          <h3 class="d3">D3: Improvements</h3>
+          <p>Although the website successfully met most of the design specifications, several improvements could still
+            be made based on testing and user feedback.</p>
+          <p>One important improvement would be simplifying the sign in/sign up page. According to the survey results,
+            50% of users selected this page as the hardest page to use. This suggests that the authentication system may
+            feel confusing or visually crowded for some users. To improve this, the form layout could use:</p>
+          <ul class="improvement-list">
+            <li>clearer labels,</li>
+            <li>better spacing,</li>
+            <li>and step-by-step guidance for users creating accounts.</li>
+          </ul>
+          <p>Another improvement would be enhancing the search feature. While users were able to search for projects and
+            profiles successfully, some users still found the search page difficult to use. The search system could be
+            improved by adding:</p>
+          <ul class="improvement-list">
+            <li>category filters,</li>
+            <li>sorting options,</li>
+            <li>and autocomplete suggestions.</li>
+          </ul>
+          <p>These features would make project discovery faster and more efficient.</p>
+          <p>Users also suggested adding more pictures and visuals to the website. Currently, the project cards mainly
+            rely on text and links. Adding:</p>
+          <ul class="improvement-list">
+            <li>project thumbnails,</li>
+            <li>preview images,</li>
+            <li>or screenshots</li>
+          </ul>
+          <p>would make the portfolio more visually engaging and professional.</p>
+          <p>Although the website already includes multiple themes and animations, the animation system could still be
+            improved with smoother transitions and customizable animation speed settings. This would create a more
+            polished user experience while still supporting accessibility preferences.</p>
+          <p>Accessibility could also be expanded further by adding:</p>
+          <ul class="improvement-list">
+            <li>screen-reader support,</li>
+            <li>text resizing options,</li>
+            <li>and keyboard shortcuts.</li>
+          </ul>
+          <p>These improvements would help make the website more inclusive for a wider range of users.</p>
+          <p>Finally, performance optimization could continue by:</p>
+          <ul class="improvement-list">
+            <li>compressing images,</li>
+            <li>minimizing JavaScript files,</li>
+            <li>and caching frequently used resources.</li>
+          </ul>
+          <p>These improvements would help maintain fast loading speeds as the website grows and more features are
+            added.</p>
+
+          <h3 class="d4">D4: Impact of the Solution</h3>
+          <p>The solution successfully solved the original problem identified in Criterion A by creating a centralized
+            and organized portfolio platform where users can display, manage, and discover projects more efficiently.
+          </p>
+          <p>Before creating the website, projects and information were scattered across different platforms and were
+            difficult to access quickly. The final solution solved this problem by combining:</p>
+          <ul class="impact-list">
+            <li>user profiles,</li>
+            <li>project showcases,</li>
+            <li>search functionality,</li>
+            <li>and customizable themes</li>
+          </ul>
+          <p>into one connected platform.</p>
+          <p>The impact on the target audience was positive. Users were able to:</p>
+          <ul class="impact-list">
+            <li>navigate the website easily,</li>
+            <li>access projects quickly,</li>
+            <li>and interact with different pages without confusion.</li>
+          </ul>
+          <p>Survey results showed that:</p>
+          <ul class="impact-list">
+            <li>75% of users found the website easy or very easy to navigate,</li>
+            <li>100% confirmed that buttons and links worked correctly,</li>
+            <li>and the website received an average visual rating of 4/5.</li>
+          </ul>
+          <p>This demonstrates that the website was successful both functionally and visually.</p>
+          <p>The customizable themes and animation settings also improved user experience because users could
+            personalize how the website looked and behaved. Additionally, responsive layouts allowed the website to work
+            correctly across desktop and mobile devices, making it accessible for more users.</p>
+          <p>The project also had a significant impact on me as a developer and designer. During development, I
+            strengthened several IB Learner Profile attributes:</p>
+          <ul class="impact-list">
+            <li>Thinker — by solving problems related to Firebase integration, authentication systems, responsiveness,
+              and search functionality.</li>
+            <li>Communicator — by designing layouts and navigation systems that clearly present information to users.
+            </li>
+            <li>Reflective — by analyzing user feedback and improving the solution based on survey results and testing.
+            </li>
+          </ul>
+          <p>The solution can continue being used as:</p>
+          <ul class="impact-list">
+            <li>a student portfolio platform,</li>
+            <li>a personal project showcase,</li>
+            <li>or a customizable dashboard website.</li>
+          </ul>
+          <p>Because the website is scalable, additional features and improvements can continue to be added in the
+            future, making the solution sustainable and expandable over time.</p>
+        </div>
       </article>
 
       <footer class="criteria-footer">
         <a class="back-to-top" href="#top">Back to top ↑</a>
         <p class="criteria-footnote">
           PortfolioHub — Assessment Criteria Page
-          taxem es saxid
         </p>
       </footer>
     </section>
   </main>
 
-  <!-- ===== Single Image Popup Modal (reusable for all images) ===== -->
+  <!-- Image Modal (unchanged) -->
   <div id="imageModal" class="image-modal">
     <span class="close-modal" onclick="closeImageModal()">×</span>
     <img class="modal-content" id="modalImage" src="" alt="Enlarged Image" />
     <div id="modalCaption" class="modal-caption"></div>
-    <!-- test -->
   </div>
-
-  <style>
-    .image-modal {
-      display: none;
-      position: fixed;
-      z-index: 9999;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.92);
-      justify-content: center;
-      align-items: center;
-      overflow: auto;
-    }
-
-    .modal-content {
-      max-width: 92%;
-      max-height: 88vh;
-      border-radius: 12px;
-      box-shadow: 0 25px 70px rgba(0, 0, 0, 0.9);
-      object-fit: contain;
-    }
-
-    .close-modal {
-      position: absolute;
-      top: 25px;
-      right: 35px;
-      color: #f0f0f0;
-      font-size: 70px;
-      font-weight: bold;
-      cursor: pointer;
-      transition: color 0.3s;
-    }
-
-    .close-modal:hover,
-    .close-modal:focus {
-      color: #bbb;
-      text-decoration: none;
-    }
-
-    .modal-caption {
-      margin-top: 15px;
-      color: #ddd;
-      font-size: 1.1rem;
-      text-align: center;
-      max-width: 90%;
-    }
-
-    .popup-trigger {
-      color: var(--color-accent-strong);
-      text-decoration: underline;
-      cursor: pointer;
-      font-weight: 500;
-      transition: color 0.2s;
-    }
-
-    .popup-trigger:hover {
-      color: #93c5fd;
-    }
-
-    .video-container {
-      width: 100%;
-      max-width: 520px;
-      margin: 40px auto;
-      border-radius: 20px;
-      overflow: hidden;
-      background: #000;
-
-      /* Glass / depth effect */
-      box-shadow:
-        0 10px 30px rgba(0, 0, 0, 0.4),
-        0 0 0 1px rgba(255, 255, 255, 0.05) inset;
-
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .video-container:hover {
-      transform: scale(1.03);
-      box-shadow:
-        0 20px 50px rgba(0, 0, 0, 0.6),
-        0 0 0 1px rgba(255, 255, 255, 0.1) inset;
-    }
-
-    .video-container video {
-      width: 100%;
-      display: block;
-      border-radius: 20px;
-    }
-  </style>
 
   <script>
     function openImageModal(imageSrc, caption = "") {
       const modal = document.getElementById("imageModal");
       const modalImg = document.getElementById("modalImage");
       const captionEl = document.getElementById("modalCaption");
-
       modalImg.src = imageSrc;
       captionEl.textContent = caption;
       modal.style.display = "flex";
@@ -1475,7 +1791,6 @@
       document.getElementById("imageModal").style.display = "none";
     }
 
-    // Close when clicking outside the image
     document.getElementById("imageModal").onclick = function (e) {
       if (e.target === this || e.target.classList.contains("close-modal")) {
         closeImageModal();
