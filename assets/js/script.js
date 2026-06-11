@@ -163,9 +163,25 @@ function renderProfile(u) {
   setText(qs(".profile-dob-text"), u?.dateOfBirth || "Not provided");
   setText(qs(".profile-bio"), u?.bio || "");
 
+  // Handle new .profile-avatar structure
+  const avatarWrap = byId("profile-avatar-wrap");
+  if (avatarWrap) {
+    if (u?.profilePicUrl) {
+      const img = document.createElement("img");
+      img.src = u.profilePicUrl;
+      img.alt = (u.name || "User") + " profile picture";
+      avatarWrap.innerHTML = "";
+      avatarWrap.appendChild(img);
+    } else {
+      // Keep the SVG placeholder in place (already in HTML), reset if needed
+      if (!avatarWrap.querySelector("svg")) {
+        avatarWrap.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.3"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" /></svg>`;
+      }
+    }
+  }
+  // Legacy fallback for old .profile-pic-placeholder
   const pic = qs(".profile-pic-placeholder");
   if (pic) {
-    pic.innerHTML = "IMG";
     if (u?.profilePicUrl) {
       const img = document.createElement("img");
       img.src = u.profilePicUrl;
@@ -173,6 +189,8 @@ function renderProfile(u) {
       img.className = "profile-pic-img";
       pic.innerHTML = "";
       pic.appendChild(img);
+    } else {
+      pic.innerHTML = "";
     }
   }
 }
@@ -259,10 +277,9 @@ function renderContact(u) {
     li.className = "contact-item";
 
     if (it.isLink) {
-      li.innerHTML = `<span class="contact-k">${it.k}</span>
-        <a class="text-link" href="${it.v}" target="_blank" rel="noreferrer">${it.v}</a>`;
+      li.innerHTML = `<span class="contact-k">${it.k}</span><span class="contact-v"><a href="${it.v}" target="_blank" rel="noreferrer">${it.v}</a></span>`;
     } else {
-      li.innerHTML = `<span class="contact-k">${it.k}</span><span>${it.v}</span>`;
+      li.innerHTML = `<span class="contact-k">${it.k}</span><span class="contact-v">${it.v}</span>`;
     }
 
     ul.appendChild(li);
@@ -615,7 +632,13 @@ async function initSearchPage() {
     else renderProjects(q);
   }
 
-  input.addEventListener("input", handle);
+  let debounceTimer;
+  function debouncedHandle() {
+    clearTimeout(debounceTimer);
+    debounceTimer = setTimeout(handle, 220);
+  }
+
+  input.addEventListener("input", debouncedHandle);
   type.addEventListener("change", handle);
   handle();
 }
@@ -784,63 +807,4 @@ onAuthStateChanged(auth, async (user) => {
   updateNav(authUser);
   await runPage();
 });
-
-// Theme switcher
-const themeLink = document.getElementById('theme-link');
-const themeIcon = document.getElementById('theme-icon');
-const animateToggle = document.getElementById('animate-toggle');
-
-// All possible themes
-const themes = {
-  lightNoAnim: 'assets/css/light_no_animation.css',
-  darkNoAnim: 'assets/css/dark_no_animation.css',
-  lightAnim: 'assets/css/light_with_animation.css',
-  darkAnim: 'assets/css/dark_with_animation.css'
-};
-
-// Load saved preference or system default
-function loadTheme() {
-  const savedTheme = localStorage.getItem('portfolioTheme') || 'lightNoAnim';
-  const savedAnim = localStorage.getItem('portfolioAnim') === 'true';
-
-  animateToggle.checked = savedAnim;
-
-  let file;
-  if (savedTheme === 'darkNoAnim' || savedTheme === 'darkAnim') {
-    file = savedAnim ? themes.darkAnim : themes.darkNoAnim;
-    themeIcon.textContent = '🌙';
-  } else {
-    file = savedAnim ? themes.lightAnim : themes.lightNoAnim;
-    themeIcon.textContent = '☀️';
-  }
-
-  themeLink.href = file;
-}
-
-// Save and apply when changed
-function saveAndApply() {
-  const useDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-  const useAnim = animateToggle.checked;
-
-  let chosen;
-  if (useDark) {
-    chosen = useAnim ? 'darkAnim' : 'darkNoAnim';
-  } else {
-    chosen = useAnim ? 'lightAnim' : 'lightNoAnim';
-  }
-
-  localStorage.setItem('portfolioTheme', chosen.replace(/Anim|NoAnim/, ''));
-  localStorage.setItem('portfolioAnim', useAnim);
-
-  loadTheme();
-}
-
-// Listen to changes
-animateToggle.addEventListener('change', saveAndApply);
-
-// Optional: listen to system dark mode change
-window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', saveAndApply);
-
-// Initial load
-loadTheme();
 

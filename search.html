@@ -4,57 +4,42 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Search — PortfolioHub</title>
-    <link
-      rel="stylesheet"
-      href="assets/css/dark_no_animation.css"
-      id="theme-link"
-    />
+    <link rel="stylesheet" href="assets/css/main.css" />
   </head>
 
   <body data-page="search">
+
     <nav class="top-nav">
       <div class="nav-left">
         <a class="logo" href="index.html">PortfolioHub</a>
       </div>
-
-      <div class="nav-right">
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav-right" id="nav-menu">
         <a class="nav-link" href="index.html">Home</a>
         <a class="nav-link" href="search.html">Search</a>
         <a class="nav-link" href="criterion.html">Criteria</a>
-
-        <a class="nav-link" href="login.html" id="login-link"
-          >Login / Register</a
-        >
-        <a class="nav-link hidden" href="dashboard.html" id="dashboard-link"
-          >Dashboard</a
-        >
-        <button class="nav-btn hidden" type="button" id="logout-btn">
-          Logout
-        </button>
+        <a class="nav-link" href="login.html" id="login-link">Login / Register</a>
+        <a class="nav-link hidden" href="dashboard.html" id="dashboard-link">Dashboard</a>
+        <button class="nav-btn hidden" type="button" id="logout-btn">Logout</button>
       </div>
     </nav>
 
     <main class="container">
       <header class="page-head">
-        <h1>Search users &amp; projects</h1>
-        <p class="muted">
-          Guests can browse. Use the dropdown to search users or projects.
-        </p>
+        <h1>Search</h1>
+        <p class="muted">Discover users and projects — no account required.</p>
       </header>
 
-      <section class="card panel search-panel">
+      <section class="card search-panel">
         <div class="search-controls">
           <label class="field">
             <span>Search term</span>
-            <input
-              type="text"
-              id="search-input"
-              placeholder="e.g. Anna, UI, news, portfolio"
-            />
+            <input type="search" id="search-input" placeholder="e.g. Anna, portfolio, JavaScript…" autocomplete="off" />
           </label>
-
           <label class="field">
-            <span>Search type</span>
+            <span>Type</span>
             <select id="search-type">
               <option value="users">Users</option>
               <option value="projects">Projects</option>
@@ -63,12 +48,15 @@
         </div>
 
         <p id="search-count" class="tiny muted">Start typing to see results.</p>
-
         <div id="search-results" class="search-results"></div>
       </section>
     </main>
 
+    <footer class="site-footer">
+      <p>PortfolioHub &mdash; Built with Firebase &amp; vanilla JS</p>
+    </footer>
+
     <script type="module" src="assets/js/script.js"></script>
-    <script src="assets/js/theme-toggle.js"></script>
+    <script src="assets/js/nav.js"></script>
   </body>
 </html>

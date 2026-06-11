@@ -4,206 +4,132 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Login / Register — PortfolioHub</title>
-    <link
-      rel="stylesheet"
-      href="assets/css/dark_no_animation.css"
-      id="theme-link"
-    />
+    <link rel="stylesheet" href="assets/css/main.css" />
   </head>
 
-  <body data-page="auth" class="auth-body">
+  <body data-page="auth">
+
     <nav class="top-nav">
       <div class="nav-left">
         <a class="logo" href="index.html">PortfolioHub</a>
       </div>
-
-      <div class="nav-right">
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav-right" id="nav-menu">
         <a class="nav-link" href="index.html">Home</a>
         <a class="nav-link" href="search.html">Search</a>
         <a class="nav-link" href="criterion.html">Criteria</a>
-
-        <a class="nav-link" href="login.html" id="login-link"
-          >Login / Register</a
-        >
-        <a class="nav-link hidden" href="dashboard.html" id="dashboard-link"
-          >Dashboard</a
-        >
-        <button class="nav-btn hidden" type="button" id="logout-btn">
-          Logout
-        </button>
+        <a class="nav-link" href="login.html" id="login-link">Login / Register</a>
+        <a class="nav-link hidden" href="dashboard.html" id="dashboard-link">Dashboard</a>
+        <button class="nav-btn hidden" type="button" id="logout-btn">Logout</button>
       </div>
     </nav>
 
     <main class="container auth-page">
-      <section class="auth-shell">
+      <div class="auth-shell">
+
+        <!-- Info panel -->
         <aside class="card auth-info">
-          <p class="chip chip-glow">PortfolioHub</p>
-          <h1 class="auth-title">Create a portfolio with real accounts</h1>
+          <div class="auth-eyebrow">
+            <span class="chip chip-glow">PortfolioHub</span>
+          </div>
+          <h1 class="auth-title">A portfolio that lives in the cloud</h1>
           <p class="auth-lead">
-            Register to save your profile and projects to the cloud. Or continue
-            as a guest to explore.
+            Register once and your profile, skills, and projects are saved
+            to Firestore — accessible from anywhere, shareable with anyone.
           </p>
 
-          <ul class="auth-list">
-            <li><span class="dot"></span> Email/password authentication</li>
-            <li>
-              <span class="dot"></span> Firestore database (profiles + projects)
-            </li>
-            <li><span class="dot"></span> Public profile pages</li>
-            <li><span class="dot"></span> Search users and projects</li>
+          <ul class="auth-features">
+            <li><span class="feat-dot"></span>Email / password authentication</li>
+            <li><span class="feat-dot"></span>Firestore database for profiles &amp; projects</li>
+            <li><span class="feat-dot"></span>Public profile pages with shareable links</li>
+            <li><span class="feat-dot"></span>Search users and projects instantly</li>
           </ul>
 
           <div class="auth-side-actions">
-            <a class="btn btn-primary" href="search.html"
-              >Continue without registration</a
-            >
-            <a class="btn btn-ghost" href="criterion.html"
-              >View assessment criteria (A–D)</a
-            >
+            <a class="btn btn-ghost" href="search.html">Continue without account</a>
+            <a class="btn btn-ghost" href="criterion.html">View assessment criteria (A–D)</a>
           </div>
-
         </aside>
 
+        <!-- Auth panel -->
         <section class="card auth-panel">
-          <div class="tabs" role="tablist" aria-label="Authentication tabs">
-            <button class="tab is-active" type="button" data-tab="login">
-              Login
-            </button>
-            <button class="tab" type="button" data-tab="register">
-              Register
-            </button>
+          <div class="tabs" role="tablist" aria-label="Authentication">
+            <button class="tab is-active" type="button" data-tab="login">Login</button>
+            <button class="tab" type="button" data-tab="register">Register</button>
           </div>
 
           <!-- LOGIN -->
           <form id="login-form" class="form tab-panel" data-panel="login">
             <div class="form-head">
-              <h2>Login</h2>
-              <p class="muted">Sign in to edit your portfolio.</p>
+              <h2>Welcome back</h2>
+              <p class="muted">Sign in to manage your portfolio.</p>
             </div>
 
             <label class="field">
               <span>Email</span>
-              <input
-                type="email"
-                id="login-email"
-                required
-                placeholder="you@example.com"
-                autocomplete="email"
-              />
+              <input type="email" id="login-email" required placeholder="you@example.com" autocomplete="email" />
             </label>
 
             <label class="field">
               <span>Password</span>
               <div class="input-wrap">
-                <input
-                  type="password"
-                  id="login-password"
-                  required
-                  placeholder="••••••••"
-                  autocomplete="current-password"
-                />
-                <button
-                  class="icon-btn"
-                  type="button"
-                  data-toggle="login-password"
-                >
-                  Show
-                </button>
+                <input type="password" id="login-password" required placeholder="••••••••" autocomplete="current-password" />
+                <button class="icon-btn" type="button" data-toggle="login-password">Show</button>
               </div>
             </label>
 
-            <button type="submit" class="btn btn-primary btn-block">
-              Login
-            </button>
+            <button type="submit" class="btn btn-primary btn-block">Sign in</button>
             <p id="login-message" class="form-message" aria-live="polite"></p>
           </form>
 
           <!-- REGISTER -->
-          <form
-            id="register-form"
-            class="form tab-panel hidden"
-            data-panel="register"
-          >
+          <form id="register-form" class="form tab-panel hidden" data-panel="register">
             <div class="form-head">
-              <h2>Register</h2>
-              <p class="muted">Create a new account (saved in Firestore).</p>
+              <h2>Create account</h2>
+              <p class="muted">Join and start building your portfolio.</p>
             </div>
 
             <label class="field">
-              <span>Name</span>
-              <input
-                type="text"
-                id="register-name"
-                required
-                placeholder="Your full name"
-                autocomplete="name"
-              />
+              <span>Full name</span>
+              <input type="text" id="register-name" required placeholder="Your full name" autocomplete="name" />
             </label>
 
             <label class="field">
-              <span>Username (optional)</span>
-              <input
-                type="text"
-                id="register-username"
-                placeholder="@username"
-                autocomplete="nickname"
-              />
+              <span>Username <small class="muted">(optional)</small></span>
+              <input type="text" id="register-username" placeholder="@username" autocomplete="nickname" />
             </label>
 
             <label class="field">
               <span>Email</span>
-              <input
-                type="email"
-                id="register-email"
-                required
-                placeholder="you@example.com"
-                autocomplete="email"
-              />
+              <input type="email" id="register-email" required placeholder="you@example.com" autocomplete="email" />
             </label>
 
             <label class="field">
               <span>Password</span>
               <div class="input-wrap">
-                <input
-                  type="password"
-                  id="register-password"
-                  required
-                  placeholder="Choose a strong password"
-                  autocomplete="new-password"
-                />
-                <button
-                  class="icon-btn"
-                  type="button"
-                  data-toggle="register-password"
-                >
-                  Show
-                </button>
+                <input type="password" id="register-password" required placeholder="Choose a strong password" autocomplete="new-password" />
+                <button class="icon-btn" type="button" data-toggle="register-password">Show</button>
               </div>
-
-              <br />
-
               <div class="strength" aria-hidden="true">
                 <div class="strength-bar" id="strength-bar"></div>
               </div>
-              <p class="tiny muted" id="strength-text">
-                Use 8+ chars with numbers and letters.
-              </p>
+              <p class="tiny muted" id="strength-text">Use 8+ characters with numbers and letters.</p>
             </label>
 
-            <button type="submit" class="btn btn-primary btn-block">
-              Create account
-            </button>
-            <p
-              id="register-message"
-              class="form-message"
-              aria-live="polite"
-            ></p>
+            <button type="submit" class="btn btn-primary btn-block">Create account</button>
+            <p id="register-message" class="form-message" aria-live="polite"></p>
           </form>
         </section>
-      </section>
+      </div>
     </main>
 
+    <footer class="site-footer">
+      <p>PortfolioHub &mdash; Built with Firebase &amp; vanilla JS</p>
+    </footer>
+
     <script type="module" src="assets/js/script.js"></script>
-    <script src="assets/js/theme-toggle.js"></script>
+    <script src="assets/js/nav.js"></script>
   </body>
 </html>

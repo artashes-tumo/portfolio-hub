@@ -4,33 +4,25 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Dashboard — PortfolioHub</title>
-    <link
-      rel="stylesheet"
-      href="assets/css/dark_no_animation.css"
-      id="theme-link"
-    />
+    <link rel="stylesheet" href="assets/css/main.css" />
   </head>
 
   <body data-page="dashboard">
+
     <nav class="top-nav">
       <div class="nav-left">
         <a class="logo" href="index.html">PortfolioHub</a>
       </div>
-
-      <div class="nav-right">
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav-right" id="nav-menu">
         <a class="nav-link" href="index.html">Home</a>
         <a class="nav-link" href="search.html">Search</a>
         <a class="nav-link" href="criterion.html">Criteria</a>
-
-        <a class="nav-link" href="login.html" id="login-link"
-          >Login / Register</a
-        >
-        <a class="nav-link hidden" href="dashboard.html" id="dashboard-link"
-          >Dashboard</a
-        >
-        <button class="nav-btn hidden" type="button" id="logout-btn">
-          Logout
-        </button>
+        <a class="nav-link hidden" href="login.html" id="login-link">Login / Register</a>
+        <a class="nav-link hidden" href="dashboard.html" id="dashboard-link">Dashboard</a>
+        <button class="nav-btn hidden" type="button" id="logout-btn">Logout</button>
       </div>
     </nav>
 
@@ -38,21 +30,19 @@
       <header class="page-head">
         <h1>Dashboard</h1>
         <p class="muted">
-          You are editing: <span id="dashboard-current-user">Loading…</span>
-        </p>
-        <p class="tiny muted">
-          Changes are saved in the cloud using Firestore.
+          Editing: <strong id="dashboard-current-user">Loading…</strong>
+          &nbsp;&mdash;&nbsp;
+          <span class="tiny muted">All changes saved to Firestore</span>
         </p>
       </header>
 
-      <section class="dash-grid">
-        <!-- Profile -->
+      <div class="dash-layout">
+
+        <!-- Profile panel -->
         <section class="card panel">
           <div class="panel-head">
-            <h2>Edit Profile &amp; Contact</h2>
-            <p class="muted">
-              This controls what people see on your public profile.
-            </p>
+            <h2>Profile &amp; Contact</h2>
+            <p class="muted">Controls your public profile page.</p>
           </div>
 
           <form id="profile-form" class="form">
@@ -61,14 +51,9 @@
                 <span>Name</span>
                 <input type="text" id="profile-name-input" required />
               </label>
-
               <label class="field">
                 <span>Username</span>
-                <input
-                  type="text"
-                  id="profile-username-input"
-                  placeholder="tesnenq"
-                />
+                <input type="text" id="profile-username-input" placeholder="@handle" />
               </label>
             </div>
 
@@ -77,176 +62,102 @@
                 <span>Date of birth</span>
                 <input type="date" id="profile-dob-input" />
               </label>
-
               <label class="field">
-                <span>Profile picture URL (optional)</span>
-                <input
-                  type="url"
-                  id="profile-pic-input"
-                  placeholder="https://..."
-                />
+                <span>Profile picture URL</span>
+                <input type="url" id="profile-pic-input" placeholder="https://..." />
               </label>
             </div>
 
             <label class="field">
               <span>Bio</span>
-              <textarea
-                id="profile-bio-input"
-                rows="3"
-                placeholder="Short description about you"
-              ></textarea>
+              <textarea id="profile-bio-input" rows="3" placeholder="Short description about you"></textarea>
             </label>
 
             <label class="field">
-              <span>Skills (comma separated)</span>
-              <input
-                type="text"
-                id="profile-skills-input"
-                placeholder="HTML, CSS, JavaScript, Firebase"
-              />
+              <span>Skills <small class="muted">(comma separated)</small></span>
+              <input type="text" id="profile-skills-input" placeholder="HTML, CSS, JavaScript, Firebase" />
             </label>
 
             <div class="field-row">
               <label class="field">
-                <span>Email</span>
-                <input
-                  type="email"
-                  id="profile-email-input"
-                  placeholder="you@example.com"
-                />
+                <span>Contact email</span>
+                <input type="email" id="profile-email-input" placeholder="you@example.com" />
               </label>
-
               <label class="field">
-                <span>Phone (optional)</span>
-                <input
-                  type="tel"
-                  id="profile-phone-input"
-                  placeholder="+43 ..."
-                />
+                <span>Phone <small class="muted">(optional)</small></span>
+                <input type="tel" id="profile-phone-input" placeholder="+43 …" />
               </label>
             </div>
 
             <div class="field-row">
               <label class="field">
                 <span>Socials</span>
-                <input
-                  type="text"
-                  id="profile-socials-input"
-                  placeholder="@username or links"
-                />
+                <input type="text" id="profile-socials-input" placeholder="@username or links" />
               </label>
-
               <label class="field">
                 <span>Website</span>
-                <input
-                  type="url"
-                  id="profile-website-input"
-                  placeholder="https://example.com"
-                />
+                <input type="url" id="profile-website-input" placeholder="https://example.com" />
               </label>
             </div>
 
-            <button type="submit" class="btn btn-primary btn-block">
-              Save profile
-            </button>
-            <p
-              id="profile-save-message"
-              class="form-message"
-              aria-live="polite"
-            ></p>
+            <button type="submit" class="btn btn-primary btn-block">Save profile</button>
+            <p id="profile-save-message" class="form-message" aria-live="polite"></p>
           </form>
         </section>
 
-        <!-- Projects -->
+        <!-- Projects panel -->
         <section class="card panel">
           <div class="panel-head">
-            <h2>Manage Projects</h2>
-            <p class="muted">
-              Add projects that appear as cards on your profile.
-            </p>
+            <h2>Projects</h2>
+            <p class="muted">Cards shown on your public profile.</p>
           </div>
 
           <div id="project-list" class="project-list"></div>
 
           <div class="divider"></div>
 
-          <h3 class="subhead">Add new project</h3>
+          <p class="subhead">Add project</p>
           <form id="new-project-form" class="form">
             <label class="field">
               <span>Project title</span>
-              <input
-                type="text"
-                placeholder="Name of project"
-                id="new-project-title"
-                required
-              />
+              <input type="text" id="new-project-title" required placeholder="Name of project" />
             </label>
-
             <label class="field">
               <span>Description</span>
-              <textarea
-                id="new-project-description"
-                placeholder="About your project"
-                rows="2"
-                required
-              ></textarea>
+              <textarea id="new-project-description" rows="2" required placeholder="About your project"></textarea>
             </label>
-
             <label class="field">
-              <span>Link (optional)</span>
-              <input
-                type="url"
-                id="new-project-link"
-                placeholder="https://..."
-              />
+              <span>Link <small class="muted">(optional)</small></span>
+              <input type="url" id="new-project-link" placeholder="https://..." />
             </label>
-
-            <button type="submit" class="btn btn-primary btn-block">
-              Add project
-            </button>
-            <p
-              id="project-save-message"
-              class="form-message"
-              aria-live="polite"
-            ></p>
+            <button type="submit" class="btn btn-primary btn-block">Add project</button>
+            <p id="project-save-message" class="form-message" aria-live="polite"></p>
           </form>
 
           <div class="divider"></div>
 
           <section class="danger-zone">
-            <h3 class="subhead danger-title">Danger zone</h3>
-            <p class="tiny muted">
-              This permanently deletes your profile document and your Firebase
-              account. (Firebase may require recent login.)
-            </p>
-
-            <label class="field">
-              <span style="color: red">Confirm password (to delete)</span>
-              <input
-                type="password"
-                id="delete-password"
-                placeholder="Enter your password"
-                autocomplete="current-password"
-              />
+            <p class="danger-title">⚠ Danger zone</p>
+            <p class="tiny muted">Permanently deletes your Firestore profile and Firebase account. Requires recent login.</p>
+            <label class="field" style="margin-top:0.75rem">
+              <span class="danger-label">Confirm password</span>
+              <input type="password" id="delete-password" placeholder="Enter your password" autocomplete="current-password" />
             </label>
-
-            <br />
-
-            <button
-              type="button"
-              class="btn btn-danger btn-block"
-              id="delete-account-btn"
-            >
-              Delete account
+            <button type="button" class="btn btn-danger btn-block" id="delete-account-btn" style="margin-top:0.65rem">
+              Delete account permanently
             </button>
-
             <p id="delete-message" class="form-message" aria-live="polite"></p>
           </section>
         </section>
-      </section>
+
+      </div>
     </main>
 
+    <footer class="site-footer">
+      <p>PortfolioHub &mdash; Built with Firebase &amp; vanilla JS</p>
+    </footer>
+
     <script type="module" src="assets/js/script.js"></script>
-    <script src="assets/js/theme-toggle.js"></script>
+    <script src="assets/js/nav.js"></script>
   </body>
 </html>

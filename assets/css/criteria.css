@@ -1,37 +1,36 @@
 /* ================================
-   PortfolioHub - Criteria Page
-   File: criteria.css – FULL VERSION
+   PortfolioHub - Criteria Page  
+   aligned with main design system
    ================================ */
 
 :root {
-  --color-bg: #020617;
-  --color-bg-soft: #02091f;
-  --color-surface: #020617;
-  --color-surface-raised: #02091f;
-  --color-border-subtle: rgba(148, 163, 184, 0.25);
-  --color-border-strong: rgba(148, 163, 184, 0.4);
+  --color-bg: #080c14;
+  --color-bg-soft: #0d1424;
+  --color-surface: rgba(14, 22, 42, 0.80);
+  --color-surface-raised: rgba(20, 30, 55, 0.70);
+  --color-border-subtle: rgba(120, 140, 180, 0.16);
+  --color-border-strong: rgba(120, 140, 180, 0.28);
 
-  --color-text: #e5e7eb;
-  --color-text-muted: #9ca3af;
-  --color-text-soft: #6b7280;
+  --color-text: #eef2ff;
+  --color-text-muted: #a8b4cc;
+  --color-text-soft: #637089;
 
-  --color-accent: #3b82f6;
-  --color-accent-soft: rgba(59, 130, 246, 0.15);
-  --color-accent-strong: #60a5fa;
+  --color-accent: #4f8fff;
+  --color-accent-soft: rgba(79, 143, 255, 0.12);
+  --color-accent-strong: #7eb3ff;
 
-  --chip-a: #22c55e;
+  --chip-a: #34d399;
   --chip-b: #f97316;
-  --chip-c: #eab308;
-  --chip-d: #8b5cf6;
+  --chip-c: #fbbf24;
+  --chip-d: #a78bfa;
 
   --radius-sm: 0.625rem;
   --radius-md: 1rem;
   --radius-lg: 1.5rem;
   --radius-pill: 999px;
 
-  --shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.65);
-  --shadow-chip: 0 0 0 1px rgba(15, 23, 42, 0.7),
-    0 12px 30px rgba(15, 23, 42, 0.9);
+  --shadow-soft: 0 18px 45px rgba(0, 0, 0, 0.55);
+  --shadow-chip: 0 0 0 1px rgba(15, 23, 42, 0.7), 0 12px 30px rgba(15, 23, 42, 0.9);
 
   --nav-height: 4rem;
 }
@@ -53,8 +52,8 @@ html {
 body.criteria-body {
   margin: 0;
   min-height: 100vh;
-  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  background: radial-gradient(circle at top left, #0f172a 0, #020617 48%, #000 100%);
+  font-family: var(--font-body, "DM Sans", system-ui, sans-serif);
+  background-color: var(--color-bg);
   color: var(--color-text);
   -webkit-font-smoothing: antialiased;
 }
