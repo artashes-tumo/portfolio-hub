@@ -1399,7 +1399,15 @@
 
           <h3 id="d1">D1 — Design Specification</h3>
 
-          <p>The following design specifications were established during Criterion B to guide the development and testing of PortfolioHub. Each specification was assigned a testing method, data type, and clear success goal so that evaluation in D2 could be conducted systematically and objectively. The most critical specifications — those directly affecting <span style="color:red; font-weight:900;">accessibility</span>, <span style="color:red; font-weight:900;">responsive design</span>, <span style="color:red; font-weight:900;">authentication</span>, <span style="color:red; font-weight:900;">CRUD functionality</span>, <span style="color:red; font-weight:900;">search functionality</span>, and <span style="color:red; font-weight:900;">performance requirements</span> — were prioritized as primary evaluation targets. Meeting these specifications was essential for the solution to be considered successful against the problem identified in Criterion A.</p>
+          <p>The following design specifications were established during Criterion B to guide the development and
+            testing of PortfolioHub. Each specification was given a testing method, data type, and clear success goal
+            so that evaluation in D2 could be written objectively. The most specifications, affecting <span style="color:red; font-weight:900;">accessibility</span>, <span
+              style="color:red; font-weight:900;">responsive design</span>, <span
+              style="color:red; font-weight:900;">authentication</span>, <span style="color:red; font-weight:900;">CRUD
+              functionality</span>, <span style="color:red; font-weight:900;">search functionality</span>, and <span
+              style="color:red; font-weight:900;">performance requirements</span> — were prioritized as primary
+            evaluation targets. Meeting these specifications was essential for the solution to be considered successful
+            for the problem identified in Criterion A.</p>
 
           <table class="d-table">
             <thead>
@@ -1413,82 +1421,115 @@
             </thead>
             <tbody>
               <tr>
-                <td><span style="color:red; font-weight:900;">Public profile is scannable in under 10 seconds on both mobile and desktop</span></td>
+                <td><span style="color:red; font-weight:900;">Public profile is scannable in under 10 seconds on both
+                    mobile and desktop</span></td>
                 <td>To measure how quickly users can locate important profile information</td>
                 <td>Quantitative</td>
                 <td>User Test</td>
-                <td><span style="color:lime; font-weight:bold;">Users will be asked to find the user's name, bio, skills, and one project while being timed on both desktop and mobile devices.</span> This directly tests whether the visual hierarchy and layout support rapid information retrieval across screen sizes.</td>
+                <td><span style="color:lime; font-weight:bold;">Users will be asked to find the user's name, bio,
+                    skills, and one project while being timed on both desktop and mobile devices.</span> This directly
+                  tests whether the visual and layout support information retrieval across screen sizes.
+                </td>
               </tr>
               <tr>
                 <td><span style="color:red; font-weight:900;">All projects displayed in uniform card format</span></td>
                 <td>To verify consistency between project cards</td>
                 <td>Quantitative + Qualitative</td>
                 <td>Expert Test</td>
-                <td><span style="color:lime; font-weight:bold;">A visual comparison of all project cards will be conducted to ensure that layout, spacing, titles, and styling are identical across all entries.</span> Consistency in card presentation is critical for professional portfolio readability.</td>
+                <td><span style="color:lime; font-weight:bold;">A visual comparison of all project cards will be
+                    done to ensure that layout, spacing, titles, and styling are identical across all
+                    entries.</span> 
+                </td>
               </tr>
               <tr>
-                <td><span style="color:red; font-weight:900;">Meets WCAG 2.2 Level AA accessibility requirements</span></td>
+                <td><span style="color:red; font-weight:900;">Meets WCAG 2.2 Level AA accessibility requirements</span>
+                </td>
                 <td>To evaluate accessibility and inclusivity</td>
                 <td>Quantitative</td>
                 <td>Expert Test</td>
-                <td><span style="color:lime; font-weight:bold;">Accessibility tools and manual testing will be used to check keyboard navigation, color contrast ratios, and readability across themes.</span> WCAG 2.2 compliance ensures the platform is usable by people with visual or motor impairments.</td>
+                <td><span style="color:lime; font-weight:bold;">Accessibility tools and manual testing will be used to
+                    check keyboard navigation, color contrast ratios, and readability across themes.</span> WCAG 2.2
+                  compliance ensures the platform is usable by people with visual or motor impairments.</td>
               </tr>
               <tr>
-                <td><span style="color:red; font-weight:900;">Three style variants available (light / dark / grayscale)</span></td>
+                <td><span style="color:red; font-weight:900;">Three style variants available (light / dark /
+                    grayscale)</span></td>
                 <td>To confirm that all themes function correctly</td>
                 <td>Quantitative</td>
                 <td>Performance Test</td>
-                <td><span style="color:lime; font-weight:bold;">Each style mode will be activated and tested to ensure that themes switch correctly and that user preferences persist after page reload.</span><br>
-                  <span style="color:red; font-weight:900;">Note:</span> This specification does not align perfectly with the B1 design documentation. The evaluation in D2 reflects the designs that were actually implemented rather than the original B1 specification.</td>
+                <td><span style="color:lime; font-weight:bold;">Each style mode will be activated and tested to ensure
+                    that themes switch correctly and that user preferences persist after page reload.</span><br>
+                  <span style="color:red; font-weight:900;">Note:</span> This specification does not align perfectly
+                  with the B1 design documentation. The evaluation in D2 reflects the designs that were actually
+                  implemented rather than the original B1 specification.
+                </td>
               </tr>
               <tr>
                 <td><span style="color:red; font-weight:900;">Responsive design with no horizontal scrolling</span></td>
                 <td>To test responsiveness across devices</td>
                 <td>Quantitative</td>
                 <td>Performance Test</td>
-                <td><span style="color:lime; font-weight:bold;">The website will be tested on screen sizes ranging from 320 px to 1920 px using browser developer tools.</span> Responsive design is a primary requirement because students and teachers access the platform from a variety of devices.</td>
+                <td><span style="color:lime; font-weight:bold;">The website will be tested on screen sizes ranging from
+                    320 px to 1920 px using browser developer tools.</span> Responsive design is a primary requirement
+                  because students and teachers access the platform from a variety of devices.</td>
               </tr>
               <tr>
-                <td><span style="color:red; font-weight:900;">Guests can view profiles and authenticated users can manage projects (Authentication &amp; CRUD)</span></td>
+                <td><span style="color:red; font-weight:900;">Guests can view profiles and authenticated users can
+                    manage projects (Authentication &amp; CRUD)</span></td>
                 <td>To test Firebase authentication and full CRUD functionality</td>
                 <td>Quantitative</td>
                 <td>Performance Test</td>
-                <td><span style="color:lime; font-weight:bold;">Test users will create, edit, and delete projects to confirm that all Firestore changes are saved and displayed correctly. Guest access will be tested separately to confirm read-only access without authentication.</span></td>
+                <td><span style="color:lime; font-weight:bold;">Test users will create, edit, and delete projects to
+                    confirm that all Firestore changes are saved and displayed correctly. Guest access will be tested
+                    separately to confirm read-only access without authentication.</span></td>
               </tr>
               <tr>
                 <td><span style="color:red; font-weight:900;">Website loads in under 3 seconds</span></td>
                 <td>To measure performance and loading speed</td>
                 <td>Quantitative</td>
                 <td>Performance Test</td>
-                <td><span style="color:lime; font-weight:bold;">Website loading times will be measured multiple times across different pages and connection conditions.</span> A sub-3-second load time ensures that users are not deterred by slow performance, particularly on mobile connections.</td>
+                <td><span style="color:lime; font-weight:bold;">Website loading times will be measured multiple times
+                    across different pages and connection conditions.</span> A sub-3-second load time ensures that users
+                  are not deterred by slow performance, particularly on mobile connections.</td>
               </tr>
               <tr>
                 <td><span style="color:red; font-weight:900;">Search finds users and projects effectively</span></td>
                 <td>To evaluate discoverability and search usability</td>
                 <td>Quantitative + Qualitative</td>
                 <td>User Test</td>
-                <td><span style="color:lime; font-weight:bold;">Users will search for projects and profiles using the search bar, then provide feedback about search accuracy, relevance of results, and ease of use.</span> Effective search functionality is central to the platform's purpose of making student work discoverable.</td>
+                <td><span style="color:lime; font-weight:bold;">Users will search for projects and profiles using the
+                    search bar, then provide feedback about search accuracy, relevance of results, and ease of
+                    use.</span> Effective search functionality is central to the platform's purpose of making student
+                  work discoverable.</td>
               </tr>
               <tr>
                 <td><span style="color:red; font-weight:900;">Navigation is clear and intuitive</span></td>
                 <td>To determine how easy the website is to navigate</td>
                 <td>Qualitative</td>
                 <td>User Test</td>
-                <td><span style="color:lime; font-weight:bold;">Users will complete tasks such as opening pages and finding features, then complete a structured feedback survey rating ease of navigation.</span> Navigation clarity directly determines whether users can access all features without frustration.</td>
+                <td><span style="color:lime; font-weight:bold;">Users will complete tasks such as opening pages and
+                    finding features, then complete a structured feedback survey rating ease of navigation.</span>
+                  Navigation clarity directly determines whether users can access all features without frustration.</td>
               </tr>
               <tr>
                 <td><span style="color:red; font-weight:900;">Buttons, links, and pages work correctly</span></td>
                 <td>To test reliability of all navigation and interactive elements</td>
                 <td>Quantitative</td>
                 <td>Performance Test</td>
-                <td><span style="color:lime; font-weight:bold;">All buttons, links, and pages will be manually tested in sequence to verify that they function without errors, broken links, or unexpected behaviour.</span> Full functional reliability is a baseline requirement for any production-quality web solution.</td>
+                <td><span style="color:lime; font-weight:bold;">All buttons, links, and pages will be manually tested in
+                    sequence to verify that they function without errors, broken links, or unexpected behaviour.</span>
+                  Full functional reliability is a baseline requirement for any production-quality web solution.</td>
               </tr>
             </tbody>
           </table>
 
           <h3 id="d2">D2 — Evaluation Against Success Criteria</h3>
 
-          <p>Each of the ten design specifications established in D1 was evaluated using the testing methods and data collected during the testing phase. Survey responses were gathered from eight participants. The evaluations below follow a consistent structure — <strong>Summary</strong>, <strong>Analysis</strong>, and <strong>Evaluation verdict</strong> — to ensure that conclusions are evidence-based and traceable to specific test results.</p>
+          <p>Each of the ten design specifications established in D1 was evaluated using the testing methods and data
+            collected during the testing phase. Survey responses were gathered from eight participants. The evaluations
+            below follow a consistent structure — <strong>Summary</strong>, <strong>Analysis</strong>, and
+            <strong>Evaluation verdict</strong> — to ensure that conclusions are evidence-based and traceable to
+            specific test results.</p>
 
           <div class="evaluation-grid">
 
@@ -1496,17 +1537,25 @@
               <h4>1. Public profile is scannable in under 10 seconds</h4>
               <p><strong>Summary</strong><br>
                 The user survey produced the following navigation ease ratings:<br>
-                • <span style="color:red; font-weight:900;">37.5% of users rated the website as "Very easy" to navigate,</span><br>
+                • <span style="color:red; font-weight:900;">37.5% of users rated the website as "Very easy" to
+                  navigate,</span><br>
                 • <span style="color:red; font-weight:900;">37.5% selected "Easy,"</span><br>
                 • <span style="color:red; font-weight:900;">and 25% selected "Neutral."</span><br>
                 <span style="color:red; font-weight:900;">No users selected "Difficult" or "Very difficult."</span>
               </p>
               <p><strong>Analysis</strong><br>
-                <span style="color:lime; font-weight:bold;">These results indicate that the majority of users were able to quickly understand the profile layout and locate important information within a short time.</span> The homepage was voted the easiest page to use by <span style="color:red; font-weight:900;">62.5% of participants</span>, confirming that the visual hierarchy — placing name, bio, skills, and projects in clearly separated sections — effectively guided users towards relevant information. The use of <span style="color:lime; font-weight:bold;">clear typographic contrast, consistent spacing, and a structured card layout</span> all contributed to making the profile scannable within the 10-second target.
+                <span style="color:lime; font-weight:bold;">These results indicate that the majority of users were able
+                  to quickly understand the profile layout and locate important information within a short time.</span>
+                The homepage was voted the easiest page to use by <span style="color:red; font-weight:900;">62.5% of
+                  participants</span>, confirming that the visual hierarchy — placing name, bio, skills, and projects in
+                clearly separated sections — effectively guided users towards relevant information. The use of <span
+                  style="color:lime; font-weight:bold;">clear typographic contrast, consistent spacing, and a structured
+                  card layout</span> all contributed to making the profile scannable within the 10-second target.
               </p>
               <p><strong>Evaluation</strong><br>
                 <span class="d-success">Exceeds specifications</span><br>
-                <span style="color:red; font-weight:900;">The profile consistently proved scannable across both desktop and mobile, with no users reporting difficulty finding key information.</span>
+                <span style="color:red; font-weight:900;">The profile consistently proved scannable across both desktop
+                  and mobile, with no users reporting difficulty finding key information.</span>
               </p>
             </div>
 
@@ -1520,11 +1569,18 @@
                 • <span style="color:lime; font-weight:bold;">and links/media.</span>
               </p>
               <p><strong>Analysis</strong><br>
-                <span style="color:lime; font-weight:bold;">The consistent card structure significantly improved readability and visual organization across the portfolio.</span> Because every project followed the same layout pattern, users could immediately recognize where to find specific information such as the project title, description, or links without having to re-learn the layout for each entry. This contributed to the positive navigation ratings reported in the survey. The uniform format also made the platform feel <span style="color:lime; font-weight:bold;">professional and well-structured</span>, which aligns with the original design goal of creating a credible portfolio platform.
+                <span style="color:lime; font-weight:bold;">The consistent card structure significantly improved
+                  readability and visual organization across the portfolio.</span> Because every project followed the
+                same layout pattern, users could immediately recognize where to find specific information such as the
+                project title, description, or links without having to re-learn the layout for each entry. This
+                contributed to the positive navigation ratings reported in the survey. The uniform format also made the
+                platform feel <span style="color:lime; font-weight:bold;">professional and well-structured</span>, which
+                aligns with the original design goal of creating a credible portfolio platform.
               </p>
               <p><strong>Evaluation</strong><br>
                 <span class="d-success">Meets specifications</span><br>
-                <span style="color:red; font-weight:900;">All project cards were confirmed to use identical structure, spacing, and styling with no visual inconsistencies detected during expert review.</span>
+                <span style="color:red; font-weight:900;">All project cards were confirmed to use identical structure,
+                  spacing, and styling with no visual inconsistencies detected during expert review.</span>
               </p>
             </div>
 
@@ -1533,16 +1589,23 @@
               <p><strong>Summary</strong><br>
                 The website incorporated the following accessibility features:<br>
                 • <span style="color:lime; font-weight:bold;">readable typography with clear font sizing,</span><br>
-                • <span style="color:lime; font-weight:bold;">high-contrast color schemes across all three themes,</span><br>
+                • <span style="color:lime; font-weight:bold;">high-contrast color schemes across all three
+                  themes,</span><br>
                 • <span style="color:lime; font-weight:bold;">keyboard-accessible navigation throughout,</span><br>
                 • <span style="color:lime; font-weight:bold;">and an optional animation toggle to reduce motion.</span>
               </p>
               <p><strong>Analysis</strong><br>
-                <span style="color:lime; font-weight:bold;">No users reported accessibility problems during testing, and manual keyboard navigation testing confirmed that all interactive elements were reachable without a mouse.</span> The animation toggle feature was particularly important for users with vestibular sensitivities or motion-related conditions, as it gave direct control over the visual experience. <span style="color:lime; font-weight:bold;">The grayscale theme also provided an additional accessibility-friendly display option</span> for users with colour vision deficiencies.
+                <span style="color:lime; font-weight:bold;">No users reported accessibility problems during testing, and
+                  manual keyboard navigation testing confirmed that all interactive elements were reachable without a
+                  mouse.</span> The animation toggle feature was particularly important for users with vestibular
+                sensitivities or motion-related conditions, as it gave direct control over the visual experience. <span
+                  style="color:lime; font-weight:bold;">The grayscale theme also provided an additional
+                  accessibility-friendly display option</span> for users with colour vision deficiencies.
               </p>
               <p><strong>Evaluation</strong><br>
                 <span class="d-success">Meets specifications</span><br>
-                <span style="color:red; font-weight:900;">The website met WCAG 2.2 Level AA requirements through consistent implementation of contrast, keyboard accessibility, and motion control features.</span>
+                <span style="color:red; font-weight:900;">The website met WCAG 2.2 Level AA requirements through
+                  consistent implementation of contrast, keyboard accessibility, and motion control features.</span>
               </p>
             </div>
 
@@ -1556,45 +1619,69 @@
                 Each theme applied correctly across all pages with preferences saved between sessions.
               </p>
               <p><strong>Analysis</strong><br>
-                <span style="color:lime; font-weight:bold;">Survey feedback about visual appearance was highly positive.</span> The website received an <span style="color:red; font-weight:900;">average visual appeal rating of 4/5</span> from participants. One user specifically noted that they liked <em>"the colours,"</em> while another described the website as <em>"aesthetically pleasing."</em> <span style="color:lime; font-weight:bold;">The availability of multiple themes allowed users to personalize their experience, which went beyond the original minimum requirement of simply offering theme variants.</span><br>
-                <span style="color:red; font-weight:900;">Note:</span> This specification does not perfectly align with the B1 design documentation. The evaluation reflects the themes that were actually implemented.
+                <span style="color:lime; font-weight:bold;">Survey feedback about visual appearance was highly
+                  positive.</span> The website received an <span style="color:red; font-weight:900;">average visual
+                  appeal rating of 4/5</span> from participants. One user specifically noted that they liked <em>"the
+                  colours,"</em> while another described the website as <em>"aesthetically pleasing."</em> <span
+                  style="color:lime; font-weight:bold;">The availability of multiple themes allowed users to personalize
+                  their experience, which went beyond the original minimum requirement of simply offering theme
+                  variants.</span><br>
+                <span style="color:red; font-weight:900;">Note:</span> This specification does not perfectly align with
+                the B1 design documentation. The evaluation reflects the themes that were actually implemented.
               </p>
               <p><strong>Evaluation</strong><br>
                 <span class="d-success">Exceeds specifications</span><br>
-                <span style="color:red; font-weight:900;">All three themes functioned correctly, preferences persisted between sessions, and user feedback confirmed strong satisfaction with visual design.</span>
+                <span style="color:red; font-weight:900;">All three themes functioned correctly, preferences persisted
+                  between sessions, and user feedback confirmed strong satisfaction with visual design.</span>
               </p>
             </div>
 
             <div class="eval-card">
               <h4>5. Responsive design with no horizontal scrolling</h4>
               <p><strong>Summary</strong><br>
-                The website was tested across a range of screen resolutions from <span style="color:red; font-weight:900;">320 px (mobile) to 1920 px (desktop)</span> using browser developer tools.
+                The website was tested across a range of screen resolutions from <span
+                  style="color:red; font-weight:900;">320 px (mobile) to 1920 px (desktop)</span> using browser
+                developer tools.
               </p>
               <p><strong>Analysis</strong><br>
-                <span style="color:lime; font-weight:bold;">All layouts adjusted correctly across different resolutions without producing horizontal scrolling at any breakpoint.</span> Text, navigation elements, and card grids remained readable and functional on smaller screen sizes. The responsive grid system ensured that project cards stacked vertically on mobile without overlapping or breaking the layout. <span style="color:lime; font-weight:bold;">The navigation bar adapted correctly to narrower viewports</span>, maintaining full usability on both tablet and phone screen sizes.
+                <span style="color:lime; font-weight:bold;">All layouts adjusted correctly across different resolutions
+                  without producing horizontal scrolling at any breakpoint.</span> Text, navigation elements, and card
+                grids remained readable and functional on smaller screen sizes. The responsive grid system ensured that
+                project cards stacked vertically on mobile without overlapping or breaking the layout. <span
+                  style="color:lime; font-weight:bold;">The navigation bar adapted correctly to narrower
+                  viewports</span>, maintaining full usability on both tablet and phone screen sizes.
               </p>
               <p><strong>Evaluation</strong><br>
                 <span class="d-success">Meets specifications</span><br>
-                <span style="color:red; font-weight:900;">No horizontal scrolling was detected at any tested screen resolution, and all core layout elements remained fully functional across mobile and desktop devices.</span>
+                <span style="color:red; font-weight:900;">No horizontal scrolling was detected at any tested screen
+                  resolution, and all core layout elements remained fully functional across mobile and desktop
+                  devices.</span>
               </p>
             </div>
 
             <div class="eval-card">
               <h4>6. Guests can view profiles; authenticated users can manage projects</h4>
               <p><strong>Summary</strong><br>
-                Firebase authentication and Firestore-based project management systems <span style="color:red; font-weight:900;">worked correctly during all testing sessions</span>.
+                Firebase authentication and Firestore-based project management systems <span
+                  style="color:red; font-weight:900;">worked correctly during all testing sessions</span>.
               </p>
               <p><strong>Analysis</strong><br>
                 Authenticated users were confirmed to be able to:<br>
                 • <span style="color:lime; font-weight:bold;">create new projects via the dashboard form,</span><br>
                 • <span style="color:lime; font-weight:bold;">edit existing project details,</span><br>
                 • <span style="color:lime; font-weight:bold;">delete unwanted projects,</span><br>
-                • <span style="color:lime; font-weight:bold;">and update their profile information in real time.</span><br>
-                Guest users were separately confirmed to access <span style="color:lime; font-weight:bold;">public profile pages and project displays without requiring authentication</span>. <span style="color:red; font-weight:900;">Full CRUD functionality was verified for all authenticated operations with no data loss or synchronisation errors detected.</span>
+                • <span style="color:lime; font-weight:bold;">and update their profile information in real
+                  time.</span><br>
+                Guest users were separately confirmed to access <span style="color:lime; font-weight:bold;">public
+                  profile pages and project displays without requiring authentication</span>. <span
+                  style="color:red; font-weight:900;">Full CRUD functionality was verified for all authenticated
+                  operations with no data loss or synchronisation errors detected.</span>
               </p>
               <p><strong>Evaluation</strong><br>
                 <span class="d-success">Exceeds specifications</span><br>
-                <span style="color:red; font-weight:900;">The authentication system and full CRUD operations functioned correctly in all tested scenarios, with clear separation between guest read access and authenticated write access.</span>
+                <span style="color:red; font-weight:900;">The authentication system and full CRUD operations functioned
+                  correctly in all tested scenarios, with clear separation between guest read access and authenticated
+                  write access.</span>
               </p>
             </div>
 
@@ -1604,11 +1691,17 @@
                 Page load times were measured across multiple pages and connection conditions during testing.
               </p>
               <p><strong>Analysis</strong><br>
-                <span style="color:lime; font-weight:bold;">Because the website used optimized layouts, minimal heavy assets, and efficient Firestore queries, navigation remained smooth and page transitions stayed fast throughout testing.</span> The decision to avoid large uncompressed images on core pages and to load Firestore data asynchronously meant that the initial page render was not blocked by data fetching. <span style="color:lime; font-weight:bold;">Loading remained consistently responsive across both desktop and mobile network conditions.</span>
+                <span style="color:lime; font-weight:bold;">Because the website used optimized layouts, minimal heavy
+                  assets, and efficient Firestore queries, navigation remained smooth and page transitions stayed fast
+                  throughout testing.</span> The decision to avoid large uncompressed images on core pages and to load
+                Firestore data asynchronously meant that the initial page render was not blocked by data fetching. <span
+                  style="color:lime; font-weight:bold;">Loading remained consistently responsive across both desktop and
+                  mobile network conditions.</span>
               </p>
               <p><strong>Evaluation</strong><br>
                 <span class="d-success">Meets specifications</span><br>
-                <span style="color:red; font-weight:900;">All tested pages loaded within the 3-second target, with no users reporting performance issues during the testing phase.</span>
+                <span style="color:red; font-weight:900;">All tested pages loaded within the 3-second target, with no
+                  users reporting performance issues during the testing phase.</span>
               </p>
             </div>
 
@@ -1618,11 +1711,19 @@
                 Users tested the search functionality by searching for both user profiles and project titles.
               </p>
               <p><strong>Analysis</strong><br>
-                <span style="color:lime; font-weight:bold;">The search feature returned correct results for both user and project queries during testing.</span> However, <span style="color:red; font-weight:900;">12.5% of users selected the search page as the hardest page to use</span>, indicating that while the feature functioned correctly, the usability of the search experience could be improved. The absence of <span style="color:lime; font-weight:bold;">category filters, sorting options, and autocomplete suggestions</span> meant that users had to rely entirely on exact search terms, which reduced discoverability for partial queries. This result shows that the feature met its technical requirement but fell short of optimal usability.
+                <span style="color:lime; font-weight:bold;">The search feature returned correct results for both user
+                  and project queries during testing.</span> However, <span style="color:red; font-weight:900;">12.5% of
+                  users selected the search page as the hardest page to use</span>, indicating that while the feature
+                functioned correctly, the usability of the search experience could be improved. The absence of <span
+                  style="color:lime; font-weight:bold;">category filters, sorting options, and autocomplete
+                  suggestions</span> meant that users had to rely entirely on exact search terms, which reduced
+                discoverability for partial queries. This result shows that the feature met its technical requirement
+                but fell short of optimal usability.
               </p>
               <p><strong>Evaluation</strong><br>
                 <span class="d-partial">Partially exceeds specifications</span><br>
-                <span style="color:red; font-weight:900;">Search returned accurate results but usability feedback identified clear areas for improvement, particularly in filtering and result organisation.</span>
+                <span style="color:red; font-weight:900;">Search returned accurate results but usability feedback
+                  identified clear areas for improvement, particularly in filtering and result organisation.</span>
               </p>
             </div>
 
@@ -1632,25 +1733,41 @@
                 User survey results showed consistently positive navigation ratings across the full participant group.
               </p>
               <p><strong>Analysis</strong><br>
-                <span style="color:red; font-weight:900;">75% of users rated navigation as either "Very easy" or "Easy."</span> <span style="color:lime; font-weight:bold;">The consistent placement of the navigation bar, the clearly labelled page links, and the logical information architecture all contributed to this positive result.</span> Additionally, <span style="color:red; font-weight:900;">50% of users answered "Yes" and 50% answered "Mostly"</span> when asked whether the website clearly explained its purpose to a new visitor — confirming that the interface communicated its function effectively. <span style="color:lime; font-weight:bold;">No users selected "No" or "Unclear,"</span> which demonstrates that the navigation system successfully served its intended purpose.
+                <span style="color:red; font-weight:900;">75% of users rated navigation as either "Very easy" or
+                  "Easy."</span> <span style="color:lime; font-weight:bold;">The consistent placement of the navigation
+                  bar, the clearly labelled page links, and the logical information architecture all contributed to this
+                  positive result.</span> Additionally, <span style="color:red; font-weight:900;">50% of users answered
+                  "Yes" and 50% answered "Mostly"</span> when asked whether the website clearly explained its purpose to
+                a new visitor — confirming that the interface communicated its function effectively. <span
+                  style="color:lime; font-weight:bold;">No users selected "No" or "Unclear,"</span> which demonstrates
+                that the navigation system successfully served its intended purpose.
               </p>
               <p><strong>Evaluation</strong><br>
                 <span class="d-success">Meets specifications</span><br>
-                <span style="color:red; font-weight:900;">Navigation was confirmed as clear and intuitive by 75% of users, with 100% stating the website's purpose was either clear or mostly clear.</span>
+                <span style="color:red; font-weight:900;">Navigation was confirmed as clear and intuitive by 75% of
+                  users, with 100% stating the website's purpose was either clear or mostly clear.</span>
               </p>
             </div>
 
             <div class="eval-card">
               <h4>10. Buttons, links, and pages work correctly</h4>
               <p><strong>Summary</strong><br>
-                All interactive elements were manually tested during the testing phase, and survey participants were asked to confirm whether any functionality issues were encountered.
+                All interactive elements were manually tested during the testing phase, and survey participants were
+                asked to confirm whether any functionality issues were encountered.
               </p>
               <p><strong>Analysis</strong><br>
-                <span style="color:lime; font-weight:bold;">All buttons, navigation links, form submissions, and page transitions were manually verified to function without errors across all tested pages.</span> Survey data produced the strongest single result of the entire evaluation: <span style="color:red; font-weight:900;">100% of users confirmed that all buttons, links, and pages worked correctly without errors.</span> This result demonstrates that the implementation of interactive elements — including Firebase-connected forms, navigation links, theme toggles, and the animation switch — was fully reliable and functioned exactly as intended.
+                <span style="color:lime; font-weight:bold;">All buttons, navigation links, form submissions, and page
+                  transitions were manually verified to function without errors across all tested pages.</span> Survey
+                data produced the strongest single result of the entire evaluation: <span
+                  style="color:red; font-weight:900;">100% of users confirmed that all buttons, links, and pages worked
+                  correctly without errors.</span> This result demonstrates that the implementation of interactive
+                elements — including Firebase-connected forms, navigation links, theme toggles, and the animation switch
+                — was fully reliable and functioned exactly as intended.
               </p>
               <p><strong>Evaluation</strong><br>
                 <span class="d-success">Exceeds specifications</span><br>
-                <span style="color:red; font-weight:900;">100% user confirmation of correct functionality represents the strongest possible evidence of technical reliability across all interactive elements.</span>
+                <span style="color:red; font-weight:900;">100% user confirmation of correct functionality represents the
+                  strongest possible evidence of technical reliability across all interactive elements.</span>
               </p>
             </div>
 
@@ -1661,104 +1778,221 @@
           ═══════════════════════════════════════════════ -->
           <h3 id="d3">D3 — Improvements</h3>
 
-          <p>Although PortfolioHub successfully met the majority of its design specifications, the testing phase and user survey identified several areas where the solution could be meaningfully improved in future iterations. These improvements are grounded in direct evidence from user feedback and reflect a genuine commitment to refining the solution beyond its current state.</p>
+          <p>Although PortfolioHub successfully met the majority of its design specifications, the testing phase and
+            user survey identified several areas where the solution could be meaningfully improved in future iterations.
+            These improvements are grounded in direct evidence from user feedback and reflect a genuine commitment to
+            refining the solution beyond its current state.</p>
 
-          <p><span style="color:red; font-weight:900;">The most critical improvement identified was simplifying the sign in and sign up page.</span> According to the survey results, <span style="color:red; font-weight:900;">50% of users selected the sign in/sign up page as the hardest page to use</span> — making it the single most problematic area of the entire website. This strongly suggests that the authentication interface feels either visually crowded or structurally confusing for new users, particularly those encountering the login/registration flow for the first time. To resolve this, the form layout should be redesigned to include:</p>
+          <p><span style="color:red; font-weight:900;">The most critical improvement identified was simplifying the sign
+              in and sign up page.</span> According to the survey results, <span style="color:red; font-weight:900;">50%
+              of users selected the sign in/sign up page as the hardest page to use</span> — making it the single most
+            problematic area of the entire website. This strongly suggests that the authentication interface feels
+            either visually crowded or structurally confusing for new users, particularly those encountering the
+            login/registration flow for the first time. To resolve this, the form layout should be redesigned to
+            include:</p>
           <ul class="improvement-list">
-            <li><span style="color:lime; font-weight:bold;">clearer field labels with helper text explaining what is required,</span></li>
-            <li><span style="color:lime; font-weight:bold;">improved vertical spacing to reduce visual crowding,</span></li>
-            <li><span style="color:lime; font-weight:bold;">and step-by-step guidance prompts for users creating accounts for the first time.</span></li>
+            <li><span style="color:lime; font-weight:bold;">clearer field labels with helper text explaining what is
+                required,</span></li>
+            <li><span style="color:lime; font-weight:bold;">improved vertical spacing to reduce visual crowding,</span>
+            </li>
+            <li><span style="color:lime; font-weight:bold;">and step-by-step guidance prompts for users creating
+                accounts for the first time.</span></li>
           </ul>
-          <p>These changes would directly address the highest-rated usability problem and bring the sign in experience in line with the positive navigation scores achieved by other pages.</p>
+          <p>These changes would directly address the highest-rated usability problem and bring the sign in experience
+            in line with the positive navigation scores achieved by other pages.</p>
 
-          <p>A second important improvement would target the search feature. Although the search system returned accurate results, <span style="color:red; font-weight:900;">12.5% of users found the search page difficult to use</span>, indicating that the search experience lacked the supporting tools needed for efficient discovery. The search system could be significantly improved by adding:</p>
+          <p>A second important improvement would target the search feature. Although the search system returned
+            accurate results, <span style="color:red; font-weight:900;">12.5% of users found the search page difficult
+              to use</span>, indicating that the search experience lacked the supporting tools needed for efficient
+            discovery. The search system could be significantly improved by adding:</p>
           <ul class="improvement-list">
-            <li><span style="color:lime; font-weight:bold;">category filters to narrow results by project type or skill tag,</span></li>
-            <li><span style="color:lime; font-weight:bold;">sorting options to order results by date, relevance, or alphabetical order,</span></li>
-            <li><span style="color:lime; font-weight:bold;">and real-time autocomplete suggestions to assist users who are uncertain of exact search terms.</span></li>
+            <li><span style="color:lime; font-weight:bold;">category filters to narrow results by project type or skill
+                tag,</span></li>
+            <li><span style="color:lime; font-weight:bold;">sorting options to order results by date, relevance, or
+                alphabetical order,</span></li>
+            <li><span style="color:lime; font-weight:bold;">and real-time autocomplete suggestions to assist users who
+                are uncertain of exact search terms.</span></li>
           </ul>
-          <p>These enhancements would transform the search page from a functional but basic tool into a genuinely powerful discovery feature, which is central to the platform's purpose.</p>
+          <p>These enhancements would transform the search page from a functional but basic tool into a genuinely
+            powerful discovery feature, which is central to the platform's purpose.</p>
 
-          <p>Users also suggested that the platform would benefit from richer visual content. <span style="color:red; font-weight:900;">Currently, project cards rely primarily on text and links</span>, which limits the visual impact of the portfolio. Adding the following elements would substantially improve the professional quality of each project entry:</p>
+          <p>Users also suggested that the platform would benefit from richer visual content. <span
+              style="color:red; font-weight:900;">Currently, project cards rely primarily on text and links</span>,
+            which limits the visual impact of the portfolio. Adding the following elements would substantially improve
+            the professional quality of each project entry:</p>
           <ul class="improvement-list">
-            <li><span style="color:lime; font-weight:bold;">project thumbnail images displayed at the top of each card,</span></li>
+            <li><span style="color:lime; font-weight:bold;">project thumbnail images displayed at the top of each
+                card,</span></li>
             <li><span style="color:lime; font-weight:bold;">preview screenshots or embedded media,</span></li>
-            <li><span style="color:lime; font-weight:bold;">and support for file attachments or document links.</span></li>
+            <li><span style="color:lime; font-weight:bold;">and support for file attachments or document links.</span>
+            </li>
           </ul>
-          <p>A visually richer project card would make portfolios significantly more compelling for potential employers, teachers, or collaborators reviewing student work.</p>
+          <p>A visually richer project card would make portfolios significantly more compelling for potential employers,
+            teachers, or collaborators reviewing student work.</p>
 
-          <p>Although the animation system already provides a toggle between animated and non-animated modes, <span style="color:red; font-weight:900;">the transition effects between themes and pages could be made smoother and more polished.</span> Future improvements could include:</p>
+          <p>Although the animation system already provides a toggle between animated and non-animated modes, <span
+              style="color:red; font-weight:900;">the transition effects between themes and pages could be made smoother
+              and more polished.</span> Future improvements could include:</p>
           <ul class="improvement-list">
-            <li><span style="color:lime; font-weight:bold;">customizable animation speed settings controlled by the user,</span></li>
+            <li><span style="color:lime; font-weight:bold;">customizable animation speed settings controlled by the
+                user,</span></li>
             <li><span style="color:lime; font-weight:bold;">fade transitions between page navigations,</span></li>
-            <li><span style="color:lime; font-weight:bold;">and micro-interaction animations on button hover and form submission.</span></li>
+            <li><span style="color:lime; font-weight:bold;">and micro-interaction animations on button hover and form
+                submission.</span></li>
           </ul>
-          <p>These refinements would create a more polished and professional user experience across all visual themes.</p>
+          <p>These refinements would create a more polished and professional user experience across all visual themes.
+          </p>
 
-          <p>Accessibility could also be expanded further beyond the current WCAG 2.2 Level AA baseline. Planned improvements include:</p>
+          <p>Accessibility could also be expanded further beyond the current WCAG 2.2 Level AA baseline. Planned
+            improvements include:</p>
           <ul class="improvement-list">
-            <li><span style="color:lime; font-weight:bold;">full screen-reader support with ARIA labels on all interactive components,</span></li>
-            <li><span style="color:lime; font-weight:bold;">user-controlled text resizing without breaking the layout,</span></li>
-            <li><span style="color:lime; font-weight:bold;">and keyboard shortcut mapping for power users and accessibility-dependent navigation.</span></li>
+            <li><span style="color:lime; font-weight:bold;">full screen-reader support with ARIA labels on all
+                interactive components,</span></li>
+            <li><span style="color:lime; font-weight:bold;">user-controlled text resizing without breaking the
+                layout,</span></li>
+            <li><span style="color:lime; font-weight:bold;">and keyboard shortcut mapping for power users and
+                accessibility-dependent navigation.</span></li>
           </ul>
-          <p>These additions would raise the platform's accessibility ceiling from compliant to genuinely inclusive, making it suitable for a wider range of users including those with significant visual or motor impairments.</p>
+          <p>These additions would raise the platform's accessibility ceiling from compliant to genuinely inclusive,
+            making it suitable for a wider range of users including those with significant visual or motor impairments.
+          </p>
 
-          <p>Finally, performance optimization should be addressed proactively as the platform scales. As more users register and more projects are added to Firestore, load times could begin to increase. To prevent performance degradation, future development should include:</p>
+          <p>Finally, performance optimization should be addressed proactively as the platform scales. As more users
+            register and more projects are added to Firestore, load times could begin to increase. To prevent
+            performance degradation, future development should include:</p>
           <ul class="improvement-list">
-            <li><span style="color:lime; font-weight:bold;">automatic image compression before upload to reduce asset sizes,</span></li>
-            <li><span style="color:lime; font-weight:bold;">JavaScript bundle minimization and code splitting,</span></li>
-            <li><span style="color:lime; font-weight:bold;">and Firestore query caching to reduce redundant database reads.</span></li>
+            <li><span style="color:lime; font-weight:bold;">automatic image compression before upload to reduce asset
+                sizes,</span></li>
+            <li><span style="color:lime; font-weight:bold;">JavaScript bundle minimization and code splitting,</span>
+            </li>
+            <li><span style="color:lime; font-weight:bold;">and Firestore query caching to reduce redundant database
+                reads.</span></li>
           </ul>
-          <p>Implementing these optimizations would ensure that the platform continues to load within the 3-second target even as the volume of stored data grows significantly over time.</p>
+          <p>Implementing these optimizations would ensure that the platform continues to load within the 3-second
+            target even as the volume of stored data grows significantly over time.</p>
 
           <!-- ═══════════════════════════════════════════════
                D4 — IMPACT OF THE SOLUTION
           ═══════════════════════════════════════════════ -->
           <h3 id="d4">D4 — Impact of the Solution</h3>
 
-          <p><span style="color:red; font-weight:900;">The solution successfully solved the original problem identified in Criterion A</span> by creating a centralized, cloud-based portfolio platform where students can display, manage, and share their projects in a single organized location. The following sections examine the solution's impact across multiple dimensions: users, teachers, project organization, accessibility, scalability, and personal development.</p>
+          <p><span style="color:red; font-weight:900;">The solution successfully solved the original problem identified
+              in Criterion A</span> by creating a centralized, cloud-based portfolio platform where students can
+            display, manage, and share their projects in a single organized location. The following sections examine the
+            solution's impact across multiple dimensions: users, teachers, project organization, accessibility,
+            scalability, and personal development.</p>
 
           <h4 style="margin-top:1.5rem; font-size:1rem; color:#e0f2fe; font-weight:700;">Impact on Users</h4>
-          <p>Before PortfolioHub existed, <span style="color:red; font-weight:900;">students had no dedicated, structured platform for presenting their work to peers, teachers, or external audiences.</span> Projects and personal information were scattered across different platforms, making it difficult to create a coherent, professional impression. The final solution directly addressed this by combining <span style="color:lime; font-weight:bold;">user profiles, project showcases, a working search system, and customizable visual themes</span> into one connected platform.</p>
+          <p>Before PortfolioHub existed, <span style="color:red; font-weight:900;">students had no dedicated,
+              structured platform for presenting their work to peers, teachers, or external audiences.</span> Projects
+            and personal information were scattered across different platforms, making it difficult to create a
+            coherent, professional impression. The final solution directly addressed this by combining <span
+              style="color:lime; font-weight:bold;">user profiles, project showcases, a working search system, and
+              customizable visual themes</span> into one connected platform.</p>
 
           <p>The impact on the target user group was demonstrably positive. Survey evidence confirmed that:</p>
           <ul class="impact-list">
-            <li><span style="color:red; font-weight:900;">75% of users found the website either "Easy" or "Very easy" to navigate,</span></li>
-            <li><span style="color:red; font-weight:900;">100% confirmed that all buttons, links, and pages worked correctly without errors,</span></li>
-            <li><span style="color:red; font-weight:900;">and the website received an average visual appeal rating of 4/5.</span></li>
+            <li><span style="color:red; font-weight:900;">75% of users found the website either "Easy" or "Very easy" to
+                navigate,</span></li>
+            <li><span style="color:red; font-weight:900;">100% confirmed that all buttons, links, and pages worked
+                correctly without errors,</span></li>
+            <li><span style="color:red; font-weight:900;">and the website received an average visual appeal rating of
+                4/5.</span></li>
           </ul>
-          <p><span style="color:lime; font-weight:bold;">These results demonstrate that the platform was received positively both in terms of functionality and visual design.</span> The availability of multiple themes gave users control over how the interface appeared, and the responsive layout ensured the experience was consistent whether accessed from a phone, tablet, or computer.</p>
+          <p><span style="color:lime; font-weight:bold;">These results demonstrate that the platform was received
+              positively both in terms of functionality and visual design.</span> The availability of multiple themes
+            gave users control over how the interface appeared, and the responsive layout ensured the experience was
+            consistent whether accessed from a phone, tablet, or computer.</p>
 
           <h4 style="margin-top:1.5rem; font-size:1rem; color:#e0f2fe; font-weight:700;">Impact on Teachers</h4>
-          <p><span style="color:lime; font-weight:bold;">PortfolioHub provides teachers with a centralized location to review student work without requiring direct communication with each student individually.</span> Using the search functionality, teachers can locate any student's profile or project by name, browse portfolios publicly without needing an account, and access the dedicated Criteria A–D page to evaluate the project's design process. <span style="color:red; font-weight:900;">This significantly reduces the administrative overhead associated with collecting and reviewing student work</span>, making the platform a practical tool in an educational context.</p>
+          <p><span style="color:lime; font-weight:bold;">PortfolioHub provides teachers with a centralized location to
+              review student work without requiring direct communication with each student individually.</span> Using
+            the search functionality, teachers can locate any student's profile or project by name, browse portfolios
+            publicly without needing an account, and access the dedicated Criteria A–D page to evaluate the project's
+            design process. <span style="color:red; font-weight:900;">This significantly reduces the administrative
+              overhead associated with collecting and reviewing student work</span>, making the platform a practical
+            tool in an educational context.</p>
 
-          <h4 style="margin-top:1.5rem; font-size:1rem; color:#e0f2fe; font-weight:700;">Impact on Project Organisation</h4>
-          <p>The structured card-based project display means that <span style="color:lime; font-weight:bold;">each project entry is presented in a consistent, professional format including title, description, skill tags, and relevant links.</span> This encourages students to organize their work thoughtfully and present it in a way that is immediately readable to an outside audience. <span style="color:red; font-weight:900;">The platform transforms loosely stored personal projects into a curated, searchable professional portfolio</span> — a format directly applicable to further education and employment contexts.</p>
+          <h4 style="margin-top:1.5rem; font-size:1rem; color:#e0f2fe; font-weight:700;">Impact on Project Organisation
+          </h4>
+          <p>The structured card-based project display means that <span style="color:lime; font-weight:bold;">each
+              project entry is presented in a consistent, professional format including title, description, skill tags,
+              and relevant links.</span> This encourages students to organize their work thoughtfully and present it in
+            a way that is immediately readable to an outside audience. <span style="color:red; font-weight:900;">The
+              platform transforms loosely stored personal projects into a curated, searchable professional
+              portfolio</span> — a format directly applicable to further education and employment contexts.</p>
 
           <h4 style="margin-top:1.5rem; font-size:1rem; color:#e0f2fe; font-weight:700;">Impact on Accessibility</h4>
-          <p><span style="color:lime; font-weight:bold;">The inclusion of multiple visual themes, an animation toggle, high-contrast colour schemes, and keyboard-navigable interfaces means that the platform is usable by a wider range of people than a standard single-theme website.</span> <span style="color:red; font-weight:900;">Meeting WCAG 2.2 Level AA requirements ensures that the platform is not just functional for the majority of users but is genuinely inclusive for users with visual, cognitive, or motor accessibility needs.</span> This is particularly important in an educational setting where all students, regardless of ability, should be able to access and use the platform equally.</p>
+          <p><span style="color:lime; font-weight:bold;">The inclusion of multiple visual themes, an animation toggle,
+              high-contrast colour schemes, and keyboard-navigable interfaces means that the platform is usable by a
+              wider range of people than a standard single-theme website.</span> <span
+              style="color:red; font-weight:900;">Meeting WCAG 2.2 Level AA requirements ensures that the platform is
+              not just functional for the majority of users but is genuinely inclusive for users with visual, cognitive,
+              or motor accessibility needs.</span> This is particularly important in an educational setting where all
+            students, regardless of ability, should be able to access and use the platform equally.</p>
 
-          <h4 style="margin-top:1.5rem; font-size:1rem; color:#e0f2fe; font-weight:700;">Impact on Future Scalability</h4>
-          <p>Because the platform is built on <span style="color:lime; font-weight:bold;">Firebase Authentication and Firestore, the underlying infrastructure scales automatically without requiring server-side management.</span> New users can register, create profiles, and add projects without any administrator intervention. <span style="color:red; font-weight:900;">The solution is therefore sustainable and expandable</span> — additional features such as project categories, file upload support, commenting systems, or teacher feedback tools could all be added in future iterations without requiring a fundamental rebuild of the existing architecture. The modular CSS and JavaScript structure further supports long-term maintainability.</p>
+          <h4 style="margin-top:1.5rem; font-size:1rem; color:#e0f2fe; font-weight:700;">Impact on Future Scalability
+          </h4>
+          <p>Because the platform is built on <span style="color:lime; font-weight:bold;">Firebase Authentication and
+              Firestore, the underlying infrastructure scales automatically without requiring server-side
+              management.</span> New users can register, create profiles, and add projects without any administrator
+            intervention. <span style="color:red; font-weight:900;">The solution is therefore sustainable and
+              expandable</span> — additional features such as project categories, file upload support, commenting
+            systems, or teacher feedback tools could all be added in future iterations without requiring a fundamental
+            rebuild of the existing architecture. The modular CSS and JavaScript structure further supports long-term
+            maintainability.</p>
 
-          <h4 style="margin-top:1.5rem; font-size:1rem; color:#e0f2fe; font-weight:700;">Impact on Personal Development — IB Learner Profile</h4>
+          <h4 style="margin-top:1.5rem; font-size:1rem; color:#e0f2fe; font-weight:700;">Impact on Personal Development
+            — IB Learner Profile</h4>
 
-          <p>The development of PortfolioHub had a profound impact on my growth as both a designer and a developer, and it directly strengthened three core IB Learner Profile attributes throughout the design and development process.</p>
+          <p>The development of PortfolioHub had a profound impact on my growth as both a designer and a developer, and
+            it directly strengthened three core IB Learner Profile attributes throughout the design and development
+            process.</p>
 
-          <p><span style="color:red; font-weight:900;">Thinker</span> — <span style="color:lime; font-weight:bold;">Throughout this project, I consistently applied critical and creative thinking to solve complex technical problems that had no single obvious solution.</span> Integrating Firebase Authentication required careful reasoning about session management, security rules, and the difference between authenticated and guest access. Implementing Firestore CRUD operations demanded logical planning of data structures, error handling, and real-time synchronisation. Responsive design challenges required systematic thinking about how layouts would behave across more than a dozen different screen resolutions. The search functionality required me to think algorithmically about how data filtering, string matching, and result ranking should work together. <span style="color:lime; font-weight:bold;">Every major feature required me to break a complex problem into smaller components, reason through edge cases, and test solutions iteratively — all core characteristics of a genuine Thinker.</span></p>
+          <p><span style="color:red; font-weight:900;">Thinker</span> — <span
+              style="color:lime; font-weight:bold;">Throughout this project, I consistently applied critical and
+              creative thinking to solve complex technical problems that had no single obvious solution.</span>
+            Integrating Firebase Authentication required careful reasoning about session management, security rules, and
+            the difference between authenticated and guest access. Implementing Firestore CRUD operations demanded
+            logical planning of data structures, error handling, and real-time synchronisation. Responsive design
+            challenges required systematic thinking about how layouts would behave across more than a dozen different
+            screen resolutions. The search functionality required me to think algorithmically about how data filtering,
+            string matching, and result ranking should work together. <span style="color:lime; font-weight:bold;">Every
+              major feature required me to break a complex problem into smaller components, reason through edge cases,
+              and test solutions iteratively — all core characteristics of a genuine Thinker.</span></p>
 
-          <p><span style="color:red; font-weight:900;">Communicator</span> — <span style="color:lime; font-weight:bold;">Effective communication was at the heart of every design decision in this project.</span> The entire platform is built around the premise that users need to communicate their skills and projects clearly to an audience that may have no prior knowledge of their work. This meant designing navigation systems that were immediately self-explanatory, writing interface copy that guided users without requiring instructions, and structuring project cards so that the most important information was visible at a glance. <span style="color:lime; font-weight:bold;">Beyond the interface itself, I also communicated as a researcher — designing a structured survey, collecting feedback from eight participants, and then translating quantitative and qualitative data into actionable design evaluations.</span> The ability to present findings clearly, as demonstrated in this Criterion D, is itself a direct exercise of the Communicator profile.</p>
+          <p><span style="color:red; font-weight:900;">Communicator</span> — <span
+              style="color:lime; font-weight:bold;">Effective communication was at the heart of every design decision in
+              this project.</span> The entire platform is built around the premise that users need to communicate their
+            skills and projects clearly to an audience that may have no prior knowledge of their work. This meant
+            designing navigation systems that were immediately self-explanatory, writing interface copy that guided
+            users without requiring instructions, and structuring project cards so that the most important information
+            was visible at a glance. <span style="color:lime; font-weight:bold;">Beyond the interface itself, I also
+              communicated as a researcher — designing a structured survey, collecting feedback from eight participants,
+              and then translating quantitative and qualitative data into actionable design evaluations.</span> The
+            ability to present findings clearly, as demonstrated in this Criterion D, is itself a direct exercise of the
+            Communicator profile.</p>
 
-          <p><span style="color:red; font-weight:900;">Reflective</span> — <span style="color:lime; font-weight:bold;">Reflection was built into every stage of this project, from early client interviews in Criterion A through to the detailed evaluation presented here in Criterion D.</span> Rather than treating testing as a final checkbox, I used survey results and user feedback as genuine data sources that informed specific, targeted improvements. Identifying that <span style="color:red; font-weight:900;">50% of users struggled with the sign in page</span> required me to reflect honestly on a weakness in my own design and commit to improvements rather than defending the original solution. Similarly, recognising that <span style="color:red; font-weight:900;">12.5% of users found search difficult</span> prompted a concrete improvement plan rather than dismissal of the feedback. <span style="color:lime; font-weight:bold;">This willingness to critically evaluate my own work against evidence, acknowledge where it fell short of its potential, and propose specific improvements is the defining characteristic of the Reflective learner.</span></p>
+          <p><span style="color:red; font-weight:900;">Reflective</span> — <span
+              style="color:lime; font-weight:bold;">Reflection was built into every stage of this project, from early
+              client interviews in Criterion A through to the detailed evaluation presented here in Criterion D.</span>
+            Rather than treating testing as a final checkbox, I used survey results and user feedback as genuine data
+            sources that informed specific, targeted improvements. Identifying that <span
+              style="color:red; font-weight:900;">50% of users struggled with the sign in page</span> required me to
+            reflect honestly on a weakness in my own design and commit to improvements rather than defending the
+            original solution. Similarly, recognising that <span style="color:red; font-weight:900;">12.5% of users
+              found search difficult</span> prompted a concrete improvement plan rather than dismissal of the feedback.
+            <span style="color:lime; font-weight:bold;">This willingness to critically evaluate my own work against
+              evidence, acknowledge where it fell short of its potential, and propose specific improvements is the
+              defining characteristic of the Reflective learner.</span></p>
 
-          <p style="margin-top:1.5rem; padding:1rem 1.25rem; border-left:3px solid #4f8fff; background:rgba(79,143,255,0.07); border-radius:0 8px 8px 0;">
-            <span style="color:red; font-weight:900;">Overall, the development of PortfolioHub was a transformative learning experience that went significantly beyond the technical requirements of the MYP Design brief.</span> <span style="color:lime; font-weight:bold;">The project demanded genuine application of critical thinking, interface communication, and honest self-reflection at every stage of the design cycle.</span> <span style="color:red; font-weight:900;">The final solution successfully addressed the original problem, met or exceeded nine out of ten design specifications, received strong positive feedback from all eight survey participants, and produced a scalable, accessible, and professionally presented platform that can continue to be used and improved beyond this assessment.</span> <span style="color:lime; font-weight:bold;">The skills developed during this project — in Firebase integration, responsive CSS, user testing, data analysis, and iterative design — represent a lasting foundation for future technical and design work.</span> <span style="color:red; font-weight:900;">Most importantly, engaging deeply with the IB Learner Profile through this project demonstrated that technical skill and reflective personal growth are not separate goals — they are developed together through the process of designing, building, testing, and honestly evaluating a real solution to a real problem.</span>
-          </p>
 
         </div><!-- /criterion-d-content -->
 
-        <div style="width: 100%; height: 200px; display: flex; align-items: center; justify-content: center;" class="form-results">
-          <a href="https://docs.google.com/forms/d/1ZdPISAkllBB1OEnThxarLbl5O_D1T6o9BAcru65RTWI/edit" target="_blank">Form Results</a>
+        <div style="width: 100%; height: 200px; display: flex; align-items: center; justify-content: center;"
+          class="form-results">
+          <a href="https://docs.google.com/forms/d/1ZdPISAkllBB1OEnThxarLbl5O_D1T6o9BAcru65RTWI/edit"
+            target="_blank">Form Results</a>
         </div>
 
       </article>
